@@ -1,4 +1,4 @@
-- 👋 Hi, I’m @2jang
+- 👋 Hi, I’m [@2jang](https://github.com/2jang/2jang/tree/main)
 - 👀 I’m interested in ... AI especially Stable Diffusion
 - 🌱 I’m currently learning ... Java, Python and C
 - 💞️ I’m looking to collaborate on ...
