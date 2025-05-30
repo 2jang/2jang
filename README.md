@@ -1,5 +1,5 @@
 - 👋 Hi, I’m [@2jang](https://github.com/2jang)
-- 👀 I’m interested in ... AI especially Stable Diffusion
+- 👀 I’m interested in ... AI
 - 🌱 I’m currently learning ... Java, Python and C
 - 💞️ I’m looking to collaborate on ...
 - 📫 How to reach me ... email : jakeecc@naver.com
