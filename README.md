@@ -2,7 +2,6 @@
 
 [![Website](https://img.shields.io/website?label=My%20Website&style=for-the-badge&url=https://uswai.2jang.me/home&color=00CC66)](https://uswai.2jang.me/home)
 [![Contributions](https://github-stats-badge.vercel.app/github/contrib/2jang/easygym?style=for-the-badge&color=7678ed)](https://github.com/2jang)
-[![Patreon](https://img.shields.io/badge/Patreon-F96854?style=for-the-badge&logo=patreon&logoColor=white)](https://patreon.com/2jang)
 
 ## I'm an undergraduate student at the Suwon University in South Korea.!!
 
@@ -11,7 +10,7 @@
 - 💻 Main language: JavaScript (TypeScript too, of course!)
 - 🐧 I use Arch btw! Still a big fan of Kali Linux though
 - 🥅 2025 Goals: Win 1st place in competitions!
-- 🎵 I love J-pop, J-rock, chiptune, and synthwave music
+- 🎵 I love synthwave
 - ⚡ Fun fact: My laptop has **40GB** of RAM
 
 <!--
