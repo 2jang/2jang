@@ -51,6 +51,7 @@
 <br />
 
 <!-- Contact Section -->
+<!--
 <h2>💬 Connect With Me</h2>
 
 <div>
@@ -58,3 +59,4 @@
 [![Email](https://img.shields.io/badge/Email-jakeecc@naver.com-FF6B35?style=for-the-badge&logo=mail-dot-ru&logoColor=white)](mailto:jakeecc@naver.com)
 
 </div>
+-->
