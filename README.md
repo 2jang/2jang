@@ -1,9 +1,15 @@
-# Hi there, I'm HyunWoo - aka 2jang 👋  
+# 👋 Hi there, I'm HyunWoo - aka 2jang  
 
-[![Website](https://img.shields.io/website?label=My%20Website&style=for-the-badge&url=https://uswai.2jang.me/home&color=00CC66)](https://uswai.2jang.me/home)
-[![Contributions](https://github-stats-badge.vercel.app/github/contrib/2jang/easygym?style=for-the-badge&color=7678ed)](https://github.com/2jang)
+<!-- Badges with Original Colors -->
+[![Website](https://img.shields.io/badge/Website-2jang.me-5865F2?style=for-the-badge&logo=google-chrome&logoColor=white)](https://uswai.2jang.me/home)
+[![GitHub](https://img.shields.io/badge/GitHub-2jang-24292e?style=for-the-badge&logo=github&logoColor=white)](https://github.com/2jang)
+[![Contributions](https://img.shields.io/badge/Contributions-Active-00B894?style=for-the-badge&logo=github-actions&logoColor=white)](https://github.com/2jang/easygym)
+<br />
 
-## I'm an undergraduate student at the Suwon University in South Korea.!!
+## 🎓 I'm an undergraduate student at the Suwon University in South Korea!!
+
+<img align="right" width="300" src="src/img/wallpaperflare.com_wallpaper.jpg">
+
 
 - 🔭 I'm currently working as a Backend Team Lead on multiple projects
 - 🌱 I'm currently learning AI, specifically the principles of Transformers (the probability and statistics is killing me 😅)
@@ -13,52 +19,45 @@
 - 🎵 I love synthwave so much that my Arch theme is synthwave too!
 - ⚡ Fun fact: My PC has **40GB** of RAM
 
-<!--
-### Connect with me:
-
-[![website](./img/globe-light.svg)](https://codestackr.com#gh-light-mode-only)
-[![website](./img/globe-dark.svg)](https://codestackr.com#gh-dark-mode-only)
-&nbsp;&nbsp;
-[![website](./img/youtube-light.svg)](https://youtube.com/codestackr#gh-light-mode-only)
-[![website](./img/youtube-dark.svg)](https://youtube.com/codestackr#gh-dark-mode-only)
-&nbsp;&nbsp;
-[![website](./img/twitter-light.svg)](https://twitter.com/codestackr#gh-light-mode-only)
-[![website](./img/twitter-dark.svg)](https://twitter.com/codestackr#gh-dark-mode-only)
-&nbsp;&nbsp;
-[![website](./img/linkedin-light.svg)](https://linkedin.com/in/codeSTACKr#gh-light-mode-only)
-[![website](./img/linkedin-dark.svg)](https://linkedin.com/in/codeSTACKr#gh-dark-mode-only)
-&nbsp;&nbsp;
-[![website](./img/instagram-light.svg)](https://instagram.com/codeSTACKr#gh-light-mode-only)
-[![website](./img/instagram-dark.svg)](https://instagram.com/codeSTACKr#gh-dark-mode-only)
--->
-
-### Languages and Tools:
-
-<a href="https://www.jetbrains.com/idea/" target="_blank"><img align="left" alt="IntelliJ IDEA" width="26px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/intellij/intellij-original.svg" style="padding-right:10px;" /></a>
-<a href="https://www.jetbrains.com/pycharm/" target="_blank"><img align="left" alt="PyCharm" width="26px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pycharm/pycharm-original.svg" style="padding-right:10px;" /></a>
-<a href="https://spring.io/" target="_blank"><img align="left" alt="Spring" width="26px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" style="padding-right:10px;" /></a>
-<a href="https://nodejs.org/" target="_blank"><img align="left" alt="Node.js" width="26px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" style="padding-right:10px;" /></a>
-<a href="https://www.python.org/" target="_blank"><img align="left" alt="Python" width="26px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" style="padding-right:10px;" /></a>
-<a href="https://react.dev/" target="_blank"><img align="left" alt="React" width="26px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" style="padding-right:10px;" /></a>
-<a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank"><img align="left" alt="HTML5" width="26px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" style="padding-right:10px;" /></a>
-<a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank"><img align="left" alt="CSS3" width="26px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" style="padding-right:10px;" /></a>
-<a href="https://sass-lang.com/" target="_blank"><img align="left" alt="Sass" width="26px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" style="padding-right:10px;" /></a>
-<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank"><img align="left" alt="JavaScript" width="26px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" style="padding-right:10px;" /></a>
-<a href="https://www.typescriptlang.org/" target="_blank"><img align="left" alt="TypeScript" width="26px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" style="padding-right:10px;" /></a>
-<a href="https://www.mongodb.com/" target="_blank"><img align="left" alt="MongoDB" width="26px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" style="padding-right:10px;" /></a>
-<a href="https://www.mysql.com/" target="_blank"><img align="left" alt="MySQL" width="26px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" style="padding-right:10px;" /></a>
-<a href="https://git-scm.com/" target="_blank"><img align="left" alt="Git" width="26px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" style="padding-right:10px;" /></a>
-<a href="https://github.com/" target="_blank"><img align="left" alt="GitHub" width="26px" src="https://user-images.githubusercontent.com/3369400/139448065-39a229ba-4b06-434b-bc67-616e2ed80c8f.png" style="padding-right:10px;" /></a>
-
-<!--
 <br />
 
----
+<!-- Tech Stack -->
+<h2>🚀 Tech Stack</h2>
 
-<details>
-  <summary>:zap: GitHub Stats</summary>
+<div>
 
-  ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=2jang&show_icons=true&theme=synthwave)
+### 💻 Languages
+![JavaScript](https://img.shields.io/badge/JavaScript-FFD23F?style=for-the-badge&logo=javascript&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Python](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
 
-</details>
--->
+### 🚀 Backend
+![Spring](https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![Express.js](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge&logo=express&logoColor=white)
+
+### 🌐 Frontend
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css&logoColor=white)
+![SASS](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
+
+### 🛠️ Tools & Databases
+![IntelliJ IDEA](https://img.shields.io/badge/IntelliJ_IDEA-FE2857.svg?style=for-the-badge&logo=intellij-idea&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white)
+![Git](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white)
+
+</div>
+
+<br />
+
+<!-- Contact Section -->
+<h2>💬 Connect With Me</h2>
+
+<div>
+
+[![Email](https://img.shields.io/badge/Email-jakeecc@naver.com-2C3E50?style=for-the-badge&logo=gmail&logoColor=white)](mailto:jakeecc@naver.com)
+
+</div>
