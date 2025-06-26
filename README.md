@@ -61,13 +61,3 @@
 </div>
 -->
 
-[![Website](https://img.shields.io/badge/2jang.me-0969DA?style=for-the-badge&logo=firefoxbrowser&logoColor=white)](https://uswai.2jang.me/home)
-[![Website](https://img.shields.io/badge/2jang.me-1A202C?style=for-the-badge&logo=firefoxbrowser&logoColor=white)](https://uswai.2jang.me/home)
-[![Website](https://img.shields.io/badge/2jang.me-00ACC1?style=for-the-badge&logo=firefoxbrowser&logoColor=white)](https://uswai.2jang.me/home)
-[![Website](https://img.shields.io/badge/2jang.me-6B46C1?style=for-the-badge&logo=firefoxbrowser&logoColor=white)](https://uswai.2jang.me/home)
-[![Website](https://img.shields.io/badge/2jang.me-10B981?style=for-the-badge&logo=firefoxbrowser&logoColor=white)](https://uswai.2jang.me/home)
-[![Website](https://img.shields.io/badge/2jang.me-475569?style=for-the-badge&logo=firefoxbrowser&logoColor=white)](https://uswai.2jang.me/home)
-[![Website](https://img.shields.io/badge/2jang.me-4F46E5?style=for-the-badge&logo=firefoxbrowser&logoColor=white)](https://uswai.2jang.me/home)
-[![Website](https://img.shields.io/badge/2jang.me-FF6B6B?style=for-the-badge&logo=firefoxbrowser&logoColor=white)](https://uswai.2jang.me/home)
-[![Website](https://img.shields.io/badge/2jang.me-14B8A6?style=for-the-badge&logo=firefoxbrowser&logoColor=white)](https://uswai.2jang.me/home)
-[![Website](https://img.shields.io/badge/2jang.me-1E3A8A?style=for-the-badge&logo=firefoxbrowser&logoColor=white)](https://uswai.2jang.me/home)
