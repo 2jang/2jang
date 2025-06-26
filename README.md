@@ -8,7 +8,7 @@
 
 ## 🎓 I'm an undergraduate student at the Suwon University in South Korea!!
 
-<img align="right" width="300" src="src/img/wallpaperflare.com_wallpaper.jpg">
+<img align="right" width="400" src="src/img/wallpaperflare.com_wallpaper.jpg">
 
 
 - 🔭 I'm currently working as a Backend Team Lead on multiple projects
