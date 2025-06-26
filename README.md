@@ -8,9 +8,6 @@
 
 ## 🎓 I'm an undergraduate student at the Suwon University in South Korea!!
 
-<img align="right" width="400" src="src/img/wallpaperflare.com_wallpaper.jpg">
-
-
 - 🔭 I'm currently working as a Backend Team Lead on multiple projects
 - 🌱 I'm currently learning AI, specifically the principles of Transformers (the probability and statistics is killing me 😅)
 - 💻 My main language is JavaScript (TypeScript too, of course!)
