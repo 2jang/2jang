@@ -55,6 +55,6 @@
 
 <div>
 
-[![Email](https://img.shields.io/badge/Email-jakeecc@naver.com-2C3E50?style=for-the-badge&logo=gmail&logoColor=white)](mailto:jakeecc@naver.com)
+[![Email](https://img.shields.io/badge/Email-jakeecc@naver.com-FF6B35?style=for-the-badge&logo=mail-dot-ru&logoColor=white)](mailto:jakeecc@naver.com)
 
 </div>
