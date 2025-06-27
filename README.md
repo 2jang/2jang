@@ -2,8 +2,9 @@
 
 <!-- Badges with Original Colors -->
 [![Website](https://img.shields.io/badge/2jang.me-0969DA?style=for-the-badge&logo=firefoxbrowser&logoColor=white)](https://uswai.2jang.me/home)
-[![GitHub](https://img.shields.io/badge/GitHub-2jang-24292e?style=for-the-badge&logo=github&logoColor=white)](https://github.com/2jang)
-[![Contributions](https://img.shields.io/badge/Contributions-Active-00B894?style=for-the-badge&logo=github-actions&logoColor=white)](https://github.com/2jang/easygym)
+[![GitHub](https://img.shields.io/badge/GitHub-24292e?style=for-the-badge&logo=github&logoColor=white)](https://github.com/2jang)
+[![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.com/users/YOUR_DISCORD_ID)
+
 <br />
 
 ## 🎓 I'm an undergraduate student at the Suwon University in South Korea!!
