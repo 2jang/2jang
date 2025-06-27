@@ -19,10 +19,8 @@
 
 <br />
 
-<!-- Tech Stack -->
-<h2>🚀 Tech Stack</h2>
+## 🚀 Tech Stack
 
-<div>
 
 ### 💻 Languages
 ![JavaScript](https://img.shields.io/badge/JavaScript-FFD23F?style=for-the-badge&logo=javascript&logoColor=black)
@@ -47,17 +45,3 @@
 ![MySQL](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white)
 ![Git](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white)
 
-</div>
-
-<br />
-
-<!-- Contact Section -->
-<!--
-<h2>💬 Connect With Me</h2>
-
-<div>
-
-[![Email](https://img.shields.io/badge/Email-jakeecc@naver.com-FF6B35?style=for-the-badge&logo=mail-dot-ru&logoColor=white)](mailto:jakeecc@naver.com)
-
-</div>
--->
