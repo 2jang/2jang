@@ -4,7 +4,6 @@
 [![GitHub](https://img.shields.io/badge/GitHub-24292e?style=for-the-badge&logo=github&logoColor=white)](https://github.com/2jang)
 [![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.com/users/1176420765898395711)
 
-<br />
 
 ## 🎓 I'm an undergraduate student at the Suwon University in South Korea!!
 
@@ -16,7 +15,6 @@
 - 🎵 I love synthwave so much that my Arch theme is synthwave too!
 - ⚡ Fun fact: My PC has **40GB** of RAM
 
-<br />
 
 ## 🚀 Tech Stack
 
