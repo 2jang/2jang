@@ -1,12 +1,9 @@
 # 👋 Hi there, I'm HyunWoo - aka 2jang  
-
 [![Website](https://img.shields.io/badge/2jang.me-0969DA?style=for-the-badge&logo=firefoxbrowser&logoColor=white)](https://uswai.2jang.me/home)
 [![GitHub](https://img.shields.io/badge/GitHub-24292e?style=for-the-badge&logo=github&logoColor=white)](https://github.com/2jang)
 [![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.com/users/1176420765898395711)
 
-
 ## 🎓 I'm an undergraduate student at the Suwon University in South Korea!!
-
 - 🔭 I'm currently working as a Backend Team Lead on multiple projects
 - 🌱 I'm currently learning AI, specifically the principles of Transformers (the probability and statistics is killing me 😅)
 - 💻 My main language is JavaScript (TypeScript too, of course!)
@@ -15,9 +12,7 @@
 - 🎵 I love synthwave so much that my Arch theme is synthwave too!
 - ⚡ Fun fact: My PC has **40GB** of RAM
 
-
 ## 🚀 Tech Stack
-
 ### 💻 Languages
 ![JavaScript](https://img.shields.io/badge/JavaScript-FFD23F?style=for-the-badge&logo=javascript&logoColor=black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
@@ -41,3 +36,13 @@
 ![MySQL](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white)
 ![Git](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white)
 
+<br>
+
+<details>
+<summary>📊 GitHub Stats</summary>
+<br>
+<p>
+  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=2jang&show_icons=true&theme=default&hide_border=false&include_all_commits=false&count_private=true" alt="GitHub Stats" />
+  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=2jang&layout=compact&theme=default&hide_border=false&langs_count=6" alt="Most Used Languages" />
+</p>
+</details>
