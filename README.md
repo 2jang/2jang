@@ -9,7 +9,6 @@
 - 💻 My main language is JavaScript (TypeScript too, of course!)
 - 🐧 I use Arch btw! Still a big fan of Kali Linux though
 - 💡 My 2025 goal is winning awards at national hackathon competitions!
-- 🎵 I love synthwave so much that my Arch theme is synthwave too!
 - ⚡ Fun fact: My PC has **40GB** of RAM
 
 ## 🚀 Tech Stack
