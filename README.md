@@ -3,13 +3,17 @@
 [![GitHub](https://img.shields.io/badge/GitHub-24292e?style=for-the-badge&logo=github&logoColor=white)](https://github.com/2jang)
 [![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.com/users/1176420765898395711)
 
-## 🎓 I'm an undergraduate student at the Suwon University in South Korea!!
+## 🎓 I'm an undergraduate student at the Suwon University in South Korea
 - 🔭 I'm currently working as a Backend Team Lead on multiple projects
 - 🌱 I'm currently learning AI, specifically the principles of Transformers (the probability and statistics is killing me 😅)
 - 💻 My main language is JavaScript (TypeScript too, of course!)
 - 🐧 I use Arch btw! Still a big fan of Kali Linux though
 - 💡 My 2025 goal is winning awards at national hackathon competitions!
 - ⚡ Fun fact: My PC has **40GB** of RAM
+
+## 📝 Latest Blog Posts
+<!-- BLOG-POST-LIST:START -->
+<!-- BLOG-POST-LIST:END -->
 
 ## 🚀 Tech Stack
 ### 💻 Languages
