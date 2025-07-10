@@ -26,3 +26,7 @@ jobs:
           max_post_count: 5
           # 날짜 포맷
           date_format: "yyyy-mm-dd"
+          
+          # 잔디 심기
+          committer_username: "2jang"
+          committer_email: "jakeecc@naver.com"
