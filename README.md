@@ -13,6 +13,8 @@
 
 ## 📝 Latest Blog Posts
 <!-- BLOG-POST-LIST:START -->
+- [생각해보니까 AI 버튜버보단 로컬 AI 캐릭터 쪽으로 개발하는게 나을 것 같아요..](https://2jang-dev.tistory.com/2)
+- [AI 버튜버 개발일지&lpar;1&rpar; - 구상하기](https://2jang-dev.tistory.com/1)
 <!-- BLOG-POST-LIST:END -->
 
 ## 🚀 Tech Stack
