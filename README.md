@@ -12,9 +12,8 @@
 - ⚡ Fun fact: My PC has **40GB** of RAM
 
 ## 📝 Latest Blog Posts
-<table>
-<!-- BLOG-POST-LIST:START --><tr><td style="background-color: transparent;">2025-07-10</td><td style="background-color: transparent;"><a href="https://2jang-dev.tistory.com/2">생각해보니까 AI 버튜버보단 로컬 AI 캐릭터 쪽으로 개발하는게 나을 것 같아요..</a></td></tr><tr><td style="background-color: transparent;">2025-07-10</td><td style="background-color: transparent;"><a href="https://2jang-dev.tistory.com/1">AI 버튜버 개발일지&lpar;1&rpar; - 구상하기</a></td></tr><!-- BLOG-POST-LIST:END -->
-</table>
+<!-- BLOG-POST-LIST:START -->
+<!-- BLOG-POST-LIST:END -->
 <p><a target="_blank" href="https://2jang-dev.tistory.com">Read More</a></p>
 
 
