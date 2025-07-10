@@ -5,8 +5,8 @@
 
 ## 🎓 I'm an undergraduate student at the Suwon University in South Korea
 - 🔭 I'm currently working as a Backend Team Lead on multiple projects
-- 🌱 I'm currently learning AI, specifically the principles of Transformers (the probability and statistics is killing me 😅)
-- 💻 My main language is JavaScript (TypeScript too, of course!)
+- 🌱 I'm currently learning AI, specifically the principles of Transformers
+- 💻 My main language is JavaScript and Python (TypeScript too, of course!)
 - 🐧 I use Arch btw! Still a big fan of Kali Linux though
 - 💡 My 2025 goal is winning awards at national hackathon competitions!
 - ⚡ Fun fact: My PC has **40GB** of RAM
@@ -17,6 +17,7 @@
 - [AI 버튜버 개발일지&lpar;1&rpar; - 구상하기](https://2jang-dev.tistory.com/1)
 <!-- BLOG-POST-LIST:END -->
 <p><a target="_blank" href="https://2jang-dev.tistory.com">Read More</a></p>
+
 
 ## 🚀 Tech Stack
 ### 💻 Languages
