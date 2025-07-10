@@ -6,7 +6,7 @@
   <a href="https://discord.com/users/1176420765898395711"><img alt="Discord" src="https://img.shields.io/badge/Discord-5865F2?style=flat-square&logo=discord&logoColor=white"></a>
 </p>
 
-## 🚀 Current Focus & Interests
+## 💬 Current Focus & Interests
 - 🔭 I'm currently working as a Backend Team Lead on multiple projects
 - 🌱 I'm currently learning AI, specifically the principles of Transformers
 - 👨‍💻 My main language is JavaScript and Python (TypeScript too, of course!)
@@ -21,7 +21,7 @@
 <p><a target="_blank" href="https://2jang-dev.tistory.com">Read More</a></p>
 
 
-## ⚡ Tech Stack
+## 🚀 Tech Stack
 ### 💻 Languages
 ![JavaScript](https://img.shields.io/badge/JavaScript-FFD23F?style=for-the-badge&logo=javascript&logoColor=black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
