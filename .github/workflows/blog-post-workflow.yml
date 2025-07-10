@@ -21,9 +21,9 @@ jobs:
           accept_header: "*/*"
           max_post_count: 5
           date_format: "yyyy-mm-dd"
-          title_max_length: 70
+          template: "$newline- $date [$title]($url)"
           
-          template: '<tr><td style="background-color: transparent;">$date</td><td style="background-color: transparent;"><a href="$url">$title</a></td></tr>'
+          title_max_length: 70
           
           committer_username: "2jang"
           committer_email: "jakeecc@naver.com"
