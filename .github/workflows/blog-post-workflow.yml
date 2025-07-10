@@ -1,9 +1,7 @@
-# .github/workflows/blog-post-workflow.yml
-
 name: Latest blog post workflow
 on:
   schedule:
-    # 매일 자정(UTC)에 실행
+    # 1시간마다 실행
     - cron: '0 * * * *'
   workflow_dispatch:
 
@@ -15,9 +13,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: gautamkrishnar/blog-post-workflow@v1
         with:
-          # Tistory RSS 피드 주소
           feed_list: "https://2jang-dev.tistory.com/rss"
-          # 표시할 최대 게시물 수
+          accept_header: "*/*"
           max_post_count: 5
-          # 날짜 포맷
           date_format: "yyyy-mm-dd"
