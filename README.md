@@ -4,7 +4,7 @@
 <p>
   <a href="https://2jang.me"><img alt="Website" src="https://img.shields.io/badge/2jang.me-0969DA?style=flat-square&logo=firefoxbrowser&logoColor=white"></a>
   <a href="https://github.com/2jang"><img alt="GitHub" src="https://img.shields.io/badge/GitHub-24292e?style=flat-square&logo=github&logoColor=white"></a>
-  <a href="https://discord.com/users/1176420765898395711"><img alt="Discord" src="https://img.shields.io/badge/@2jang-5865F2?style=flat-square&logo=discord&logoColor=white"></a>
+  <a href="https://discord.com/users/1176420765898395711"><img alt="Discord" src="https://img.shields.io/badge/Discord-5865F2?style=flat-square&logo=discord&logoColor=white"></a>
 </p>
 
 ## 💬 Current Focus & Interests
