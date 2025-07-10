@@ -1,15 +1,18 @@
 # 👋 Hi there, I'm HyunWoo - aka 2jang  
-[![Website](https://img.shields.io/badge/2jang.me-0969DA?style=for-the-badge&logo=firefoxbrowser&logoColor=white)](https://2jang.me)
-[![GitHub](https://img.shields.io/badge/GitHub-24292e?style=for-the-badge&logo=github&logoColor=white)](https://github.com/2jang)
-[![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.com/users/1176420765898395711)
+<p>I'm an undergraduate student at the Suwon University in South Korea!</p>
+<p>
+  <a href="https://2jang.me"><img alt="Website" src="https://img.shields.io/badge/2jang.me-0969DA?style=flat-square&logo=firefoxbrowser&logoColor=white"></a>
+  <a href="https://github.com/2jang"><img alt="GitHub" src="https://img.shields.io/badge/GitHub-24292e?style=flat-square&logo=github&logoColor=white"></a>
+  <a href="https://discord.com/users/1176420765898395711"><img alt="Discord" src="https://img.shields.io/badge/Discord-5865F2?style=flat-square&logo=discord&logoColor=white"></a>
+</p>
 
-## 🎓 I'm an undergraduate student at the Suwon University in South Korea
+## 🚀 Current Focus & Interests
 - 🔭 I'm currently working as a Backend Team Lead on multiple projects
 - 🌱 I'm currently learning AI, specifically the principles of Transformers
-- 💻 My main language is JavaScript and Python (TypeScript too, of course!)
+- 👨‍💻 My main language is JavaScript and Python (TypeScript too, of course!)
 - 🐧 I use Arch btw! Still a big fan of Kali Linux though
 - 💡 My 2025 goal is winning awards at national hackathon competitions!
-- ⚡ Fun fact: My PC has **40GB** of RAM
+- 😎 Fun fact: My PC has **40GB** of RAM
 
 ## 📝 Latest Blog Posts
 <!-- BLOG-POST-LIST:START -->
@@ -18,14 +21,14 @@
 <p><a target="_blank" href="https://2jang-dev.tistory.com">Read More</a></p>
 
 
-## 🚀 Tech Stack
+## ⚡ Tech Stack
 ### 💻 Languages
 ![JavaScript](https://img.shields.io/badge/JavaScript-FFD23F?style=for-the-badge&logo=javascript&logoColor=black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
 
-### 🚀 Backend
+### ☁️ Backend
 ![Spring](https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
 ![Express.js](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge&logo=express&logoColor=white)
