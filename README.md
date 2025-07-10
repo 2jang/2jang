@@ -1,3 +1,4 @@
+
 # 👋 Hi there, I'm HyunWoo - aka 2jang  
 <p>I'm an undergraduate student at the Suwon University in South Korea!</p>
 <p>
@@ -6,24 +7,13 @@
   <a href="https://discord.com/users/1176420765898395711"><img alt="Discord" src="https://img.shields.io/badge/Discord-5865F2?style=flat-square&logo=discord&logoColor=white"></a>
 </p>
 
-<table border="0" cellpadding="0" cellspacing="0">
-  <tr>
-    <td valign="top" width="50%" style="padding-right: 10px;">
-      <h2>💬 Current Focus & Interests</h2>
-      <ul>
-        <li>🔭 I'm currently working as a Backend Team Lead</li>
-        <li>🌱 I'm currently learning AI, specifically Transformers</li>
-        <li>👨‍💻 My main language is JavaScript and Python</li>
-        <li>🐧 I use Arch btw! Still a big fan of Kali Linux though</li>
-        <li>💡 My 2025 goal is winning awards at national hackathon!</li>
-        <li>😎 Fun fact: My PC has <strong>40GB</strong> of RAM</li>
-      </ul>
-    </td>
-    <td valign="top" width="50%">
-      <img src="https://github-readme-stats.vercel.app/api?username=2jang&show_icons=true&theme=default&hide_border=false&include_all_commits=false&count_private=true" alt="GitHub Stats" />
-    </td>
-  </tr>
-</table>
+## 💬 Current Focus & Interests
+- 🔭 I'm currently working as a Backend Team Lead on multiple projects
+- 🌱 I'm currently learning AI, specifically the principles of Transformers
+- 👨‍💻 My main language is JavaScript and Python (TypeScript too, of course!)
+- 🐧 I use Arch btw! Still a big fan of Kali Linux though
+- 💡 My 2025 goal is winning awards at national hackathon competitions!
+- 😎 Fun fact: My PC has **40GB** of RAM
 
 ## 📝 Latest Blog Posts
 <!-- BLOG-POST-LIST:START -->
