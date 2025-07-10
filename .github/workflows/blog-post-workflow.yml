@@ -3,7 +3,6 @@ on:
   schedule:
     # 1시간마다 실행
     - cron: '0 * * * *'
-  # Actions 탭에서 수동으로 실행
   workflow_dispatch:
 
 jobs:
@@ -18,15 +17,14 @@ jobs:
       - uses: actions/checkout@v4
       - uses: gautamkrishnar/blog-post-workflow@v1
         with:
-          # 블로그 RSS 피드 주소
           feed_list: "https://2jang-dev.tistory.com/rss"
-          # Tistory 서버 오류 방지를 위한 헤더 설정
           accept_header: "*/*"
-          # 표시할 최대 게시물 수
           max_post_count: 5
-          # 날짜 포맷
           date_format: "yyyy-mm-dd"
           
-          # 잔디 심기
+          title_max_length: 70
+          
+          template: "<tr><td>$date</td><td><a href='$url'>$title</a></td></tr>"
+          
           committer_username: "2jang"
           committer_email: "jakeecc@naver.com"
