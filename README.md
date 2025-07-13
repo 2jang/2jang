@@ -49,11 +49,3 @@
 ![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white)
 ![Git](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white)
-
-<details>
-<summary>📊 GitHub Stats</summary>
-<br>
-<p>
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=2jang&layout=compact&theme=default&hide_border=false&langs_count=6" alt="Most Used Languages" />
-</p>
-</details>
