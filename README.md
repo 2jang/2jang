@@ -17,6 +17,7 @@
 - 🐧 I use Arch btw! Still a big fan of Kali Linux though
 - 💡 My 2025 goal is winning awards at national hackathon!
 - 😎 Fun fact: My PC has **40GB** of RAM
+- :key: GPG key: [`EAF1B299C8E9B61E`](https://github.com/2jang.gpg)
 
 ## 📝 Latest Blog Posts
 <!-- BLOG-POST-LIST:START -->
