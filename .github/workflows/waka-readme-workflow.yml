@@ -3,7 +3,7 @@ name: Waka Readme
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 * * * *"
+    - cron: "1 * * * *"
 
 jobs:
   update-readme:
@@ -21,7 +21,6 @@ jobs:
           TIME_RANGE: last_30_days
           SHOW_TIME: true
           BLOCKS: "⬜🟨🟩"
-          SHOW_TITLE: true
 
           COMMIT_MESSAGE: "Update Wakapi stats"
           AUTHOR_NAME: 2jang
