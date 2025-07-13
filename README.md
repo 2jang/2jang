@@ -7,12 +7,14 @@
   <a href="https://discord.com/users/1176420765898395711"><img alt="Discord" src="https://img.shields.io/badge/Discord-5865F2?style=flat-square&logo=discord&logoColor=white"></a>
 </p>
 
-## 💬 Current Focus & Interests
-- 🔭 I'm currently working as a Backend Team Lead on multiple projects
-- 🌱 I'm currently learning AI, specifically the principles of Transformers
-- 👨‍💻 My main language is JavaScript and Python (TypeScript too, of course!)
+## 💬 About me
+<img align="right" src="https://github-readme-stats.vercel.app/api?username=2jang&show_icons=true&theme=default&hide_border=false&include_all_commits=false&count_private=true" alt="GitHub Stats" />
+
+- 🔭 I'm currently working as a Backend Team Lead
+- 🌱 I'm currently learning AI, specifically Transformers
+- 👨‍💻 My main language is JavaScript and Python
 - 🐧 I use Arch btw! Still a big fan of Kali Linux though
-- 💡 My 2025 goal is winning awards at national hackathon competitions!
+- 💡 My 2025 goal is winning awards at national hackathon!
 - 😎 Fun fact: My PC has **40GB** of RAM
 
 ## 📝 Latest Blog Posts
@@ -52,7 +54,6 @@
 <summary>📊 GitHub Stats</summary>
 <br>
 <p>
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=2jang&show_icons=true&theme=default&hide_border=false&include_all_commits=false&count_private=true" alt="GitHub Stats" />
   <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=2jang&layout=compact&theme=default&hide_border=false&langs_count=6" alt="Most Used Languages" />
 </p>
 </details>
