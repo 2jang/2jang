@@ -1,16 +1,17 @@
-name: Waka Readme Workflow
+name: Waka Readme
 
 on:
   workflow_dispatch:
   schedule:
     - cron: "0 * * * *"
-    permissions:
-      contents: write
 
 jobs:
   update-readme:
     name: Update WakaReadme Stats
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
     steps:
       - uses: athul/waka-readme@master
         with:
