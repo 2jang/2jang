@@ -1,4 +1,4 @@
-# 👋 Hi there, I'm HyunWoo - aka 2jang  
+## 👋 Hi there, I'm HyunWoo - aka 2jang  
 <p>I'm an undergraduate student at the Suwon University in South Korea!</p>
 <p>
   <a href="https://2jang.me"><img alt="Website" src="https://img.shields.io/badge/2jang.me-0969DA?style=flat-square&logo=firefoxbrowser&logoColor=white"></a>
@@ -6,7 +6,7 @@
   <a href="https://discord.com/users/1176420765898395711"><img alt="Discord" src="https://img.shields.io/badge/Discord-5865F2?style=flat-square&logo=discord&logoColor=white"></a>
 </p>
 
-## 💬 About me
+### 💬 About me
 
 <img height="180em" width="50%" align="right" src="https://github-readme-stats.vercel.app/api?username=2jang&show_icons=true&theme=default&hide_border=false&include_all_commits=false&count_private=true" alt="GitHub Stats" />
 
@@ -18,7 +18,7 @@
 - 😎 Fun fact: My PC has **40GB** of RAM
 - :key: GPG key: [`EAF1B299C8E9B61E`](https://github.com/2jang.gpg)
 
-## 📝 Latest Blog Posts
+### 📝 Latest Blog Posts
 <!-- BLOG-POST-LIST:START -->
 - 2025-07-13 [AI 여자친구 개발일지&lpar;2&rpar; - 프로젝트 계획하기](https://2jang-dev.tistory.com/9)
 - 2025-07-11 [AI 여자친구 개발일지&lpar;1&rpar; - 구상하기](https://2jang-dev.tistory.com/7)
@@ -26,7 +26,7 @@
 - 2025-07-10 [AI 버튜버 개발일지&lpar;1&rpar; - 구상하기](https://2jang-dev.tistory.com/1)<!-- BLOG-POST-LIST:END -->
 <p><a target="_blank" href="https://2jang-dev.tistory.com">Read More</a></p>
 
-## 🚀 Languages and Tools
+### 🚀 Languages and Tools
 <p align="left">
   <img alt="IntelliJ IDEA" width="26px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/intellij/intellij-original.svg" />    
   <img alt="JavaScript" width="26px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" />    
@@ -45,7 +45,7 @@
   <img alt="GitHub" width="26px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" />
 </p>
 
-## 📊 Coding time in the last month
+### 📊 Coding time in the last month
 <!--START_SECTION:waka-->
 
 ```txt
