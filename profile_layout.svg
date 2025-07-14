@@ -1,0 +1,57 @@
+<svg fill="none" viewBox="0 0 800 450" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+    <foreignObject width="100%" height="100%">
+        <div xmlns="http://www.w3.org/1999/xhtml">
+            <style>
+                /* 전체 컨테이너 스타일 */
+                .container {
+                    display: flex;
+                    align-items: center;
+                    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+                    color: #333;
+                }
+                /* 화면이 넓을 때 (기본값) */
+                .about-me {
+                    flex: 1;
+                    padding-right: 20px;
+                }
+                .stats {
+                    flex: 1;
+                }
+                /* 화면이 680px 이하일 때 */
+                @media (max-width: 680px) {
+                    .container {
+                        flex-direction: column; /* 세로로 쌓기 */
+                    }
+                    .about-me {
+                        padding-right: 0;
+                        padding-bottom: 20px;
+                    }
+                }
+                ul {
+                    list-style-type: none;
+                    padding: 0;
+                }
+                li {
+                    margin-bottom: 8px;
+                }
+            </style>
+            <div class="container">
+                <div class="about-me">
+                    <h2>💬 About me</h2>
+                    <ul>
+                        <li>🔭 I'm currently working as a Backend Team Lead</li>
+                        <li>🌱 I'm currently learning AI, specifically Transformers</li>
+                        <li>👨‍💻 My main language is JavaScript and Python</li>
+                        <li>🐧 I use Arch btw! Still a big fan of Kali Linux though</li>
+                        <li>💡 My 2025 goal is winning awards at national hackathon!</li>
+                        <li>😎 Fun fact: My PC has <strong>40GB</strong> of RAM</li>
+                        <li>:key: GPG key: <a href="https://github.com/2jang.gpg"><code>EAF1B299C8E9B61E</code></a></li>
+                    </ul>
+                </div>
+                <div class="stats">
+                    <img width="100%" src="https://github-readme-stats.vercel.app/api?username=2jang&show_icons=true&theme=default&hide_border=false&include_all_commits=false&count_private=true" alt="GitHub Stats" />
+                </div>
+            </div>
+        </div>
+    </foreignObject>
+</svg>
