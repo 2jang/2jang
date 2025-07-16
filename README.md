@@ -6,9 +6,10 @@
   <a href="https://discord.com/users/1176420765898395711"><img alt="Discord" src="https://img.shields.io/badge/Discord-5865F2?style=flat-square&logo=discord&logoColor=white"></a>
 </p>
 
+### 💬 About me
+
 <img height="180em" width="50%" align="right" src="https://github-readme-stats.vercel.app/api?username=2jang&show_icons=true&theme=default&hide_border=false&include_all_commits=false&count_private=true" alt="GitHub Stats" />
 
-### 💬 About me
 - 🔭 I'm currently working as a Backend Team Lead
 - 🌱 I'm currently learning AI, specifically Transformers
 - 👨‍💻 My main language is JavaScript and Python
