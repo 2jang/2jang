@@ -17,7 +17,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: gautamkrishnar/blog-post-workflow@v1
         with:
-          feed_list: "https://2jang-dev.tistory.com/rss"
+          feed_list: "https://blog.2jang.me/rss"
           accept_header: "*/*"
           max_post_count: 5
           date_format: "yyyy-mm-dd"
