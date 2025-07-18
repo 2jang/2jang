@@ -20,10 +20,10 @@
 
 ### 📝 Latest Blog Posts
 <!-- BLOG-POST-LIST:START -->
-- 2025-07-13 [AI 여자친구 개발일지&lpar;2&rpar; - 프로젝트 계획하기](https://2jang-dev.tistory.com/9)
-- 2025-07-11 [AI 여자친구 개발일지&lpar;1&rpar; - 구상하기](https://2jang-dev.tistory.com/7)
-- 2025-07-10 [생각해보니까 AI 버튜버보단 로컬 AI 캐릭터 쪽으로 개발하는게 나을 것 같습니다..](https://2jang-dev.tistory.com/2)
-- 2025-07-10 [AI 버튜버 개발일지&lpar;1&rpar; - 구상하기](https://2jang-dev.tistory.com/1)<!-- BLOG-POST-LIST:END -->
+- 2025-07-13 [AI 여자친구 개발일지&lpar;2&rpar; - 프로젝트 계획하기](https://blog.2jang.me/9)
+- 2025-07-11 [AI 여자친구 개발일지&lpar;1&rpar; - 구상하기](https://blog.2jang.me/7)
+- 2025-07-10 [생각해보니까 AI 버튜버보단 로컬 AI 캐릭터 쪽으로 개발하는게 나을 것 같습니다..](https://blog.2jang.me/2)
+- 2025-07-10 [AI 버튜버 개발일지&lpar;1&rpar; - 구상하기](https://blog.2jang.me/1)<!-- BLOG-POST-LIST:END -->
 <p><a target="_blank" href="https://blog.2jang.me">Read More</a></p>
 
 ### 🚀 Languages and Tools
