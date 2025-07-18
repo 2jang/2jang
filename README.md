@@ -2,7 +2,7 @@
 <p>I'm an undergraduate student at the Suwon University in South Korea!</p>
 <p>
   <a href="https://2jang.me"><img alt="Website" src="https://img.shields.io/badge/2jang.me-0969DA?style=flat-square&logo=firefoxbrowser&logoColor=white"></a>
-  <a href="https://2jang-dev.tistory.com/"><img alt="Blog" src="https://img.shields.io/badge/Dev Blog-FF5722?style=flat-square&logo=tistory&logoColor=white"></a>
+  <a href="https://blog.2jang.me"><img alt="Blog" src="https://img.shields.io/badge/Dev Blog-FF5722?style=flat-square&logo=tistory&logoColor=white"></a>
   <a href="https://discord.com/users/1176420765898395711"><img alt="Discord" src="https://img.shields.io/badge/Discord-5865F2?style=flat-square&logo=discord&logoColor=white"></a>
 </p>
 
