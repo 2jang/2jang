@@ -20,6 +20,7 @@
 
 ### 📝 Latest [Blog](https://blog.2jang.me) Posts
 <!-- BLOG-POST-LIST:START -->
+- 2025-07-21 [AI 여자친구 개발일지&lpar;3&rpar; - 실시간 처리를 위한 하이브리드 아키텍처](https://blog.2jang.me/11)
 - 2025-07-13 [AI 여자친구 개발일지&lpar;2&rpar; - 프로젝트 계획하기](https://blog.2jang.me/9)
 - 2025-07-11 [AI 여자친구 개발일지&lpar;1&rpar; - 구상하기](https://blog.2jang.me/7)
 - 2025-07-10 [생각해보니까 AI 버튜버보단 로컬 AI 쪽으로 개발하는게 나을 것 같습니다..](https://blog.2jang.me/2)
