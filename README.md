@@ -18,7 +18,7 @@
 - 😎 Fun fact: My PC has **40GB** of RAM
 - :key: GPG key: [`EAF1B299C8E9B61E`](https://github.com/2jang.gpg)
 
-### 📝 Latest [Blog](https://blog.2jang.me) Posts
+### 📝 [Latest Blog Posts](https://blog.2jang.me)
 <!-- BLOG-POST-LIST:START -->
 - 2025-07-21 [AI 여자친구 개발일지&lpar;3&rpar; - 실시간 처리를 위한 하이브리드 아키텍처](https://blog.2jang.me/11)
 - 2025-07-13 [AI 여자친구 개발일지&lpar;2&rpar; - 프로젝트 계획하기](https://blog.2jang.me/9)
