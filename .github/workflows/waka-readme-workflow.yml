@@ -23,7 +23,3 @@ jobs:
           BLOCKS: "⬜🟨🟩"
 
           COMMIT_MESSAGE: "Update Wakapi stats"
-          AUTHOR_NAME: 2jang
-          AUTHOR_EMAIL: jakeecc@naver.com
-          COMMITTER_NAME: 2jang
-          COMMITTER_EMAIL: jakeecc@naver.com
