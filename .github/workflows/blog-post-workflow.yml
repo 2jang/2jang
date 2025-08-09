@@ -24,6 +24,3 @@ jobs:
           template: "$newline- $date [$title]($url)"
           
           title_max_length: 70
-          
-          committer_username: "2jang"
-          committer_email: "jakeecc@naver.com"
