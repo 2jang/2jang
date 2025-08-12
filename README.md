@@ -20,17 +20,12 @@
 
 [//]: # (### 📝 [Latest Blog Posts]&#40;https://blog.2jang.me&#41;)
 
-[//]: # (<!-- BLOG-POST-LIST:START -->)
-
-[//]: # (- 2025-07-21 [AI 여자친구 개발일지&lpar;3&rpar; - 실시간 처리를 위한 하이브리드 아키텍처]&#40;https://blog.2jang.me/11&#41;)
-
-[//]: # (- 2025-07-13 [AI 여자친구 개발일지&lpar;2&rpar; - 프로젝트 계획하기]&#40;https://blog.2jang.me/9&#41;)
-
-[//]: # (- 2025-07-11 [AI 여자친구 개발일지&lpar;1&rpar; - 구상하기]&#40;https://blog.2jang.me/7&#41;)
-
-[//]: # (- 2025-07-10 [생각해보니까 AI 버튜버보단 로컬 AI 쪽으로 개발하는게 나을 것 같습니다..]&#40;https://blog.2jang.me/2&#41;)
-
-[//]: # (- 2025-07-10 [AI 버튜버 개발일지&lpar;1&rpar; - 구상하기]&#40;https://blog.2jang.me/1&#41;<!-- BLOG-POST-LIST:END -->)
+[//]: # (<!-- BLOG-POST-LIST:START -->
+- 2025-07-21 [AI 여자친구 개발일지&lpar;3&rpar; - 실시간 처리를 위한 하이브리드 아키텍처](https://blog.2jang.me/11)
+- 2025-07-13 [AI 여자친구 개발일지&lpar;2&rpar; - 프로젝트 계획하기](https://blog.2jang.me/9)
+- 2025-07-11 [AI 여자친구 개발일지&lpar;1&rpar; - 구상하기](https://blog.2jang.me/7)
+- 2025-07-10 [생각해보니까 AI 버튜버보단 로컬 AI 쪽으로 개발하는게 나을 것 같습니다..](https://blog.2jang.me/2)
+- 2025-07-10 [AI 버튜버 개발일지&lpar;1&rpar; - 구상하기](https://blog.2jang.me/1)<!-- BLOG-POST-LIST:END -->)
 
 ### 🚀 Languages and Tools
 <p align="left">
