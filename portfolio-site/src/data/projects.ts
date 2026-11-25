@@ -221,7 +221,7 @@ export const subProjects: Project[] = [
     demo: { url: 'https://suwonai.2jang.dev', up: true },
     cover: {
       kind: 'browser-phone',
-      browser: 'suwon-ai/pc/27-pathfinder-route.webp',
+      browser: 'suwon-ai/pc/01-home.webp',
       phone: 'suwon-ai/mobile/27-pathfinder-route.webp',
       tint: '#bdd0a6',
     },
