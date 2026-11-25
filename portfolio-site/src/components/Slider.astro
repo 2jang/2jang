@@ -1,0 +1,256 @@
+---
+// 프로젝트 화면을 옆으로 넘겨 보는 슬라이더. 사진 목록은 src/data/shots.ts 에 있다.
+// 화살표 단추, 마우스로 잡고 끌기, 터치로 넘긴다.
+// 사진을 누르면 그 사진을 크게 보여 주고 아래에 설명을 적는다(Lightbox.astro).
+import Icon from './Icon.astro';
+import { imageSize } from '../lib/image-size';
+import { imageUrl } from '../lib/paths';
+import { shotSets, shotPath } from '../data/shots';
+
+interface Props {
+  /** shots.ts 의 key. 예: 'washcall' */
+  set: string;
+}
+
+const { set } = Astro.props;
+const data = shotSets[set];
+if (!data) throw new Error(`shots.ts 에 '${set}' 이 없습니다.`);
+
+const tabs = await Promise.all(
+  data.tabs.map(async (tab) => ({
+    label: tab.label,
+    device: tab.device,
+    shots: await Promise.all(
+      tab.shots.map(async (shot) => {
+        const src = shotPath(set, tab.device, shot);
+        return { ...shot, url: imageUrl(src), size: await imageSize(src) };
+      }),
+    ),
+  })),
+);
+
+const pad = (count: number) => String(count).padStart(2, '0');
+---
+
+<section class="slider" data-slider aria-label="프로젝트 화면">
+  <div class="slider-bar">
+    {
+      tabs.length > 1 ? (
+        <div class="slider-tabs" role="tablist" aria-label="화면 종류">
+          {tabs.map((tab, index) => (
+            <button type="button" role="tab" aria-selected={index === 0 ? 'true' : 'false'} data-tab={index}>
+              {tab.label}
+              <span class="count">{pad(tab.shots.length)}</span>
+            </button>
+          ))}
+        </div>
+      ) : (
+        <p class="slider-label">
+          {tabs[0].label} 화면
+          <span class="count">{pad(tabs[0].shots.length)}</span>
+        </p>
+      )
+    }
+    <p class="slider-hint">옆으로 끌어서 넘기고, 사진을 누르면 크게 볼 수 있습니다.</p>
+  </div>
+  {
+    tabs.map((tab, index) => (
+      <div class:list={['slider-view', tab.device]} data-panel={index} data-zoom-group hidden={index !== 0}>
+        <button class="slider-arrow prev" type="button" data-dir="-1" aria-label="이전 사진" disabled>
+          <Icon name="chevron-left" size={24} />
+        </button>
+        <ul class="slider-track" data-track tabindex="0" aria-label={`${tab.label} 화면 ${tab.shots.length}장`}>
+          {tab.shots.map((shot, order) => (
+            <li class:list={['slide', tab.device]}>
+              <a
+                class="zoomable"
+                href={shot.url}
+                draggable="false"
+                data-zoom
+                data-title={shot.title}
+                data-caption={shot.desc}
+                aria-label={`${shot.title} 크게 보기`}
+              >
+                <img
+                  src={shot.url}
+                  alt={shot.desc}
+                  width={shot.size?.width}
+                  height={shot.size?.height}
+                  draggable="false"
+                  loading={index === 0 && order < (tab.device === 'mobile' ? 5 : 2) ? 'eager' : 'lazy'}
+                  decoding="async"
+                />
+                <span class="detail-expand" aria-hidden="true">
+                  <Icon name="expand" size={17} />
+                </span>
+              </a>
+              <p class="slide-title">{shot.title}</p>
+            </li>
+          ))}
+        </ul>
+        <button class="slider-arrow next" type="button" data-dir="1" aria-label="다음 사진">
+          <Icon name="chevron-right" size={24} />
+        </button>
+      </div>
+    ))
+  }
+  {data.note && <p class="slider-note">{data.note}</p>}
+</section>
+
+<script>
+  for (const slider of document.querySelectorAll<HTMLElement>('[data-slider]')) {
+    const tabs = Array.from(slider.querySelectorAll<HTMLButtonElement>('[data-tab]'));
+    const panels = Array.from(slider.querySelectorAll<HTMLElement>('[data-panel]'));
+
+    for (const panel of panels) {
+      const track = panel.querySelector<HTMLElement>('[data-track]');
+      const arrows = Array.from(panel.querySelectorAll<HTMLButtonElement>('[data-dir]'));
+      if (!track) continue;
+
+      const slides = Array.from(track.children) as HTMLElement[];
+      const leftOf = (slide: HTMLElement) => slide.offsetLeft - track.offsetLeft;
+      const maxLeft = () => track.scrollWidth - track.clientWidth;
+
+      // 끝에 닿으면 그쪽 화살표를 숨긴다.
+      const update = () => {
+        for (const arrow of arrows) {
+          const forward = arrow.dataset.dir === '1';
+          arrow.disabled = forward ? track.scrollLeft >= maxLeft() - 2 : track.scrollLeft <= 2;
+        }
+      };
+
+      // 화살표는 사진 경계에 맞춰 넘긴다. 다음: 오른쪽에서 잘린 첫 사진을 맨 왼쪽에 놓는다.
+      const go = (dir: number) => {
+        const view = track.clientWidth;
+        const current = track.scrollLeft;
+        let target: number;
+        if (dir > 0) {
+          const cut = slides.find((slide) => leftOf(slide) + slide.offsetWidth > current + view + 1);
+          target = cut ? leftOf(cut) : maxLeft();
+          if (target <= current + 1) target = current + view * 0.8;
+        } else {
+          const first = slides.find((slide) => leftOf(slide) >= current - view - 1);
+          target = first ? leftOf(first) : 0;
+          if (target >= current - 1) target = current - view * 0.8;
+        }
+        track.scrollTo({ left: Math.max(0, Math.min(target, maxLeft())), behavior: 'smooth' });
+      };
+
+      for (const arrow of arrows) {
+        arrow.addEventListener('click', () => go(Number(arrow.dataset.dir)));
+      }
+
+      // 마우스로 잡고 끌어서 넘긴다. 터치는 브라우저가 직접 넘긴다.
+      let pressed = false;
+      let dragged = false;
+      let suppressClick = false;
+      let startX = 0;
+      let startLeft = 0;
+      let lastX = 0;
+      let lastTime = 0;
+      let velocity = 0;
+      let glide = 0;
+
+      const stopGlide = () => {
+        cancelAnimationFrame(glide);
+        glide = 0;
+      };
+
+      track.addEventListener('pointerdown', (event) => {
+        if (event.pointerType !== 'mouse' || event.button !== 0) return;
+        stopGlide();
+        pressed = true;
+        dragged = false;
+        startX = lastX = event.clientX;
+        startLeft = track.scrollLeft;
+        lastTime = event.timeStamp;
+        velocity = 0;
+      });
+
+      track.addEventListener('pointermove', (event) => {
+        if (!pressed) return;
+        const moved = event.clientX - startX;
+        if (!dragged) {
+          if (Math.abs(moved) < 6) return;
+          dragged = true;
+          track.classList.add('is-dragging');
+          track.setPointerCapture(event.pointerId);
+        }
+        const elapsed = event.timeStamp - lastTime;
+        if (elapsed > 0) velocity = (event.clientX - lastX) / elapsed;
+        lastX = event.clientX;
+        lastTime = event.timeStamp;
+        track.scrollLeft = startLeft - moved;
+      });
+
+      const release = (event: PointerEvent) => {
+        if (!pressed) return;
+        pressed = false;
+        if (!dragged) return;
+        track.classList.remove('is-dragging');
+        // 끌다가 놓았을 때는 사진이 열리지 않게 한다.
+        suppressClick = true;
+        setTimeout(() => (suppressClick = false), 0);
+
+        // 놓은 뒤에도 끌던 속도로 조금 더 움직이다 멈춘다.
+        if (event.timeStamp - lastTime > 80) velocity = 0;
+        const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (reduce || Math.abs(velocity) < 0.15) return;
+        let speed = Math.max(-2.5, Math.min(velocity, 2.5));
+        let before = performance.now();
+        const step = (now: number) => {
+          const elapsed = Math.min(now - before, 40);
+          before = now;
+          track.scrollLeft -= speed * elapsed;
+          speed *= Math.pow(0.94, elapsed / 16);
+          const atEdge = track.scrollLeft <= 0 || track.scrollLeft >= maxLeft();
+          glide = Math.abs(speed) > 0.03 && !atEdge ? requestAnimationFrame(step) : 0;
+        };
+        glide = requestAnimationFrame(step);
+      };
+
+      track.addEventListener('pointerup', release);
+      track.addEventListener('pointercancel', release);
+      track.addEventListener(
+        'click',
+        (event) => {
+          if (!suppressClick) return;
+          event.preventDefault();
+          event.stopPropagation();
+        },
+        true,
+      );
+      track.addEventListener('dragstart', (event) => event.preventDefault());
+      track.addEventListener('wheel', stopGlide, { passive: true });
+
+      // 넘길 때 빈 칸이 보이지 않게, 페이지가 다 뜬 뒤 이 탭의 나머지 사진을 미리 받아 둔다.
+      const preload = () => {
+        if (panel.hidden) return;
+        for (const image of track.querySelectorAll<HTMLImageElement>('img[loading="lazy"]')) image.loading = 'eager';
+      };
+      if (document.readyState === 'complete') preload();
+      else window.addEventListener('load', preload, { once: true });
+
+      track.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update);
+      panel.addEventListener('slider:show', () => {
+        update();
+        preload();
+      });
+      // 사진이 늦게 뜨면 가로 길이가 달라지므로 다시 계산한다.
+      for (const image of track.querySelectorAll('img')) image.addEventListener('load', update, { once: true });
+      update();
+    }
+
+    for (const tab of tabs) {
+      tab.addEventListener('click', () => {
+        const index = Number(tab.dataset.tab);
+        tabs.forEach((item, i) => item.setAttribute('aria-selected', i === index ? 'true' : 'false'));
+        panels.forEach((panel, i) => {
+          panel.hidden = i !== index;
+          if (i === index) panel.dispatchEvent(new Event('slider:show'));
+        });
+      });
+    }
+  }
+</script>

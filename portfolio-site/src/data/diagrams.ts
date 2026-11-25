@@ -1,0 +1,192 @@
+// 구조도 좌표. 폭 760 기준이고, 박스는 이름 한 줄과 설명 줄(16 간격)로 이뤄진다.
+
+export interface DiagramBox {
+  x: number;
+  y: number;
+  w: number;
+  h: number;
+  name: string;
+  lines?: string[];
+  /** 직접 만들거나 추가한 부분이면 강조한다. */
+  main?: boolean;
+}
+
+export interface DiagramContainer {
+  x: number;
+  y: number;
+  w: number;
+  h: number;
+  name: string;
+}
+
+export interface DiagramDiamond {
+  cx: number;
+  cy: number;
+  rx: number;
+  ry: number;
+  lines: string[];
+}
+
+export interface DiagramLabel {
+  x: number;
+  y: number;
+  text: string;
+  anchor?: 'start' | 'middle' | 'end';
+  bold?: boolean;
+}
+
+export interface DiagramData {
+  id: string;
+  label: string;
+  viewBox: string;
+  containers?: DiagramContainer[];
+  boxes: DiagramBox[];
+  diamonds?: DiagramDiamond[];
+  arrows?: string[];
+  lines?: string[];
+  labels?: DiagramLabel[];
+}
+
+export const hwaseongArch: DiagramData = {
+  id: 'hwaseong-arch',
+  label: '화성시 교통 대시보드 시스템 구조',
+  viewBox: '0 48 760 378',
+  containers: [{ x: 184, y: 150, w: 376, h: 104, name: 'AWS EC2 · Docker Compose' }],
+  boxes: [
+    { x: 24, y: 60, w: 130, h: 56, name: '공공데이터', lines: ['교통카드 · 정류장'] },
+    { x: 178, y: 60, w: 160, h: 56, name: '오프라인 파이프라인', lines: ['격자 조인 · 지표 계산'] },
+    { x: 362, y: 60, w: 144, h: 56, name: '결과 JSON', lines: ['지표 파일 21개'] },
+    { x: 24, y: 182, w: 120, h: 56, name: '브라우저', lines: ['교통 담당자'] },
+    { x: 200, y: 182, w: 100, h: 56, name: 'Caddy', lines: ['HTTPS 처리'] },
+    {
+      x: 324,
+      y: 182,
+      w: 220,
+      h: 56,
+      name: 'FastAPI 서버',
+      lines: ['조회 · 시뮬레이션 · AI · 관리자'],
+      main: true,
+    },
+    { x: 600, y: 182, w: 136, h: 56, name: 'AI 프로바이더', lines: ['4종 · 장애 시 대체 호출'] },
+    { x: 24, y: 278, w: 150, h: 56, name: 'Cloudflare Pages', lines: ['정적 프론트엔드'] },
+    { x: 24, y: 374, w: 124, h: 40, name: 'main에 push' },
+    { x: 171, y: 374, w: 124, h: 40, name: '테스트 통과', main: true },
+    { x: 318, y: 374, w: 124, h: 40, name: 'SSH 배포' },
+    { x: 465, y: 374, w: 124, h: 40, name: '헬스체크 대기', main: true },
+    { x: 612, y: 374, w: 124, h: 40, name: '외부 접속 확인' },
+  ],
+  arrows: [
+    'M154 88H178',
+    'M338 88H362',
+    'M434 116V182',
+    'M144 210H200',
+    'M300 210H324',
+    'M544 210H600',
+    'M84 238V278',
+    'M148 394H171',
+    'M295 394H318',
+    'M442 394H465',
+    'M589 394H612',
+    'M380 374V254',
+  ],
+  labels: [
+    { x: 444, y: 138, text: '서버 시작 시 메모리에 로드' },
+    { x: 94, y: 262, text: '페이지 로드' },
+    { x: 390, y: 318, text: 'docker compose up --build' },
+    { x: 24, y: 362, text: '배포 파이프라인 · GitHub Actions', bold: true },
+  ],
+};
+
+export const dongguramiArch: DiagramData = {
+  id: 'donggurami-arch',
+  label: '동구라미 서버 구조',
+  viewBox: '0 48 760 264',
+  containers: [{ x: 162, y: 60, w: 402, h: 124, name: 'AWS Lightsail · 웹 인스턴스' }],
+  boxes: [
+    { x: 24, y: 96, w: 130, h: 72, name: '클라이언트', lines: ['학생 앱 · 웹', '회장 · 동연회 웹'] },
+    { x: 178, y: 104, w: 96, h: 56, name: 'Nginx', lines: ['리버스 프록시'] },
+    {
+      x: 298,
+      y: 96,
+      w: 250,
+      h: 72,
+      name: 'Spring Boot 3 서버',
+      lines: ['Security · CORS · JWT 필터', '레이트리밋 → 도메인 서비스 → JPA'],
+    },
+    { x: 596, y: 60, w: 140, h: 56, name: 'MySQL 8', lines: ['회원 · 동아리 · 지원서'] },
+    { x: 596, y: 148, w: 140, h: 56, name: 'Redis', lines: ['리프레시 토큰 · 요청 제한'] },
+    { x: 24, y: 244, w: 160, h: 56, name: 'FCM', lines: ['합격 여부 푸시 알림'] },
+    { x: 208, y: 244, w: 160, h: 56, name: 'Naver SMTP', lines: ['학교 메일 인증'] },
+    { x: 392, y: 244, w: 160, h: 56, name: 'AWS S3', lines: ['사진 업로드'] },
+    { x: 576, y: 244, w: 160, h: 56, name: 'Pinpoint', lines: ['APM'] },
+  ],
+  lines: ['M423 168V222', 'M104 222H656'],
+  arrows: [
+    'M154 132H178',
+    'M274 132H298',
+    'M548 120H572V88H596',
+    'M548 144H572V176H596',
+    'M104 222V244',
+    'M288 222V244',
+    'M472 222V244',
+    'M656 222V244',
+  ],
+  labels: [{ x: 433, y: 212, text: '외부 서비스' }],
+};
+
+export const dongguramiDeploy: DiagramData = {
+  id: 'donggurami-deploy',
+  label: '동구라미 블루/그린 배포 흐름',
+  viewBox: '0 60 760 240',
+  boxes: [
+    { x: 24, y: 88, w: 124, h: 56, name: 'PR 머지', lines: ['main 브랜치'] },
+    { x: 168, y: 88, w: 116, h: 56, name: '빌드 · 전송', lines: ['GitHub Actions'] },
+    { x: 304, y: 88, w: 144, h: 56, name: '새 WAS 기동', lines: ['미사용 포트에서 실행'] },
+    { x: 608, y: 88, w: 128, h: 56, name: '트래픽 전환', lines: ['이전 버전 종료'] },
+    { x: 444, y: 208, w: 168, h: 56, name: '자가복구', lines: ['전체 종료 후 재시작'], main: true },
+  ],
+  diamonds: [{ cx: 528, cy: 116, rx: 60, ry: 40, lines: ['헬스체크', '통과?'] }],
+  arrows: [
+    'M148 116H168',
+    'M284 116H304',
+    'M448 116H468',
+    'M588 116H608',
+    'M528 156V208',
+    'M612 236H672V144',
+  ],
+  labels: [
+    { x: 604, y: 104, anchor: 'end', text: '성공' },
+    { x: 538, y: 186, text: '실패' },
+    { x: 662, y: 196, anchor: 'end', text: '재검사 통과' },
+    { x: 528, y: 284, anchor: 'middle', text: '복구 중에는 서비스 중단 발생' },
+  ],
+};
+
+export const privacyLensArch: DiagramData = {
+  id: 'privacy-lens-arch',
+  label: 'Privacy Lens 시스템 구조',
+  viewBox: '0 48 760 236',
+  boxes: [
+    { x: 24, y: 132, w: 120, h: 56, name: '브라우저', lines: ['사진 업로드'] },
+    {
+      x: 200,
+      y: 108,
+      w: 204,
+      h: 104,
+      name: '게이트웨이',
+      lines: ['단일 대기열', '요청별 담당 엔진 고정', '5초마다 엔진 상태 확인', '중복 요청은 기존 결과 반환'],
+      main: true,
+    },
+    { x: 464, y: 60, w: 272, h: 56, name: '분석 엔진 1', lines: ['OCR 전용 스레드 → YOLO → 판정 → 가림'] },
+    { x: 464, y: 132, w: 272, h: 56, name: '분석 엔진 2', lines: ['동일 구성'] },
+    { x: 464, y: 204, w: 272, h: 56, name: '분석 엔진 N', lines: ['서버 추가로 확장'] },
+  ],
+  lines: ['M404 160H434', 'M434 88V232'],
+  arrows: ['M144 152H200', 'M200 172H144', 'M434 88H464', 'M434 160H464', 'M434 232H464'],
+  labels: [
+    { x: 172, y: 144, anchor: 'middle', text: '분석 요청' },
+    { x: 172, y: 188, anchor: 'middle', text: '진행 SSE' },
+    { x: 452, y: 76, anchor: 'end', text: '유휴 엔진에 1건씩 배정' },
+    { x: 302, y: 236, anchor: 'middle', text: '처리 시작 전 연결 실패만 재시도' },
+  ],
+};

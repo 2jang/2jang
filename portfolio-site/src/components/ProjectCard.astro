@@ -1,0 +1,35 @@
+---
+// 메인 페이지의 프로젝트 카드. 카드 전체를 누르면 상세 페이지로 가고, 아래 링크 줄은 서비스와 저장소를 연다.
+import LinkButtons from './LinkButtons.astro';
+import ProjectCover from './ProjectCover.astro';
+import type { Project } from '../data/projects';
+
+interface Props {
+  project: Project;
+  /** 화면 아래쪽 카드면 사진을 나중에 불러온다. */
+  lazy?: boolean;
+}
+
+const { project, lazy = false } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const year = project.period.slice(0, 4);
+---
+
+<article class="project-card">
+  {project.award && <span class="card-award">{project.award}</span>}
+  <ProjectCover cover={project.cover} lazy={lazy} />
+  <div class="card-body">
+    <div class="card-meta">
+      <span class="card-domain">{project.domain}</span>
+      <span class="card-year">{year} · {project.role}</span>
+    </div>
+    <h3>
+      <a class="card-link" href={`${base}${project.path}`}>{project.title}</a>
+    </h3>
+    <p>{project.summary}</p>
+    <ul class="tech-list" aria-label="사용 기술">
+      {project.tech.map((item) => <li>{item}</li>)}
+    </ul>
+    <LinkButtons repos={project.repos} demo={project.demo} plain />
+  </div>
+</article>

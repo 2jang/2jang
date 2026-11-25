@@ -1,0 +1,83 @@
+---
+// 사진을 누르면 그 사진 한 장을 크게 보여 주고 아래에 제목과 설명을 적는다.
+// data-zoom 이 붙은 링크를 모두 처리한다. 스크립트가 동작하지 않으면 링크가 사진을 그대로 연다.
+import Icon from './Icon.astro';
+---
+
+<dialog class="lightbox" aria-label="사진 크게 보기">
+  <div class="lightbox-bar">
+    <span class="lightbox-count" data-count></span>
+    <form method="dialog">
+      <button class="lightbox-close" type="submit" aria-label="닫기" autofocus><Icon name="x" size={20} /></button>
+    </form>
+  </div>
+  <div class="lightbox-view">
+    <button class="lightbox-arrow prev" type="button" data-prev aria-label="이전 사진">
+      <Icon name="chevron-left" size={24} />
+    </button>
+    <img data-large alt="" draggable="false" />
+    <button class="lightbox-arrow next" type="button" data-next aria-label="다음 사진">
+      <Icon name="chevron-right" size={24} />
+    </button>
+  </div>
+  <div class="lightbox-text">
+    <p class="lightbox-title" data-title-text></p>
+    <p class="lightbox-caption" data-caption-text></p>
+  </div>
+</dialog>
+
+<script>
+  const dialog = document.querySelector<HTMLDialogElement>('dialog.lightbox');
+  const all = Array.from(document.querySelectorAll<HTMLAnchorElement>('a[data-zoom]'));
+
+  if (dialog && all.length > 0 && typeof dialog.showModal === 'function') {
+    const large = dialog.querySelector<HTMLImageElement>('[data-large]')!;
+    const title = dialog.querySelector<HTMLElement>('[data-title-text]')!;
+    const caption = dialog.querySelector<HTMLElement>('[data-caption-text]')!;
+    const count = dialog.querySelector<HTMLElement>('[data-count]')!;
+    const prev = dialog.querySelector<HTMLButtonElement>('[data-prev]')!;
+    const next = dialog.querySelector<HTMLButtonElement>('[data-next]')!;
+
+    // 이전·다음은 같은 묶음(슬라이더의 한 탭) 안에서만 넘긴다.
+    let group: HTMLAnchorElement[] = [];
+    let index = 0;
+
+    const show = (to: number) => {
+      index = (to + group.length) % group.length;
+      const link = group[index];
+      large.src = link.href;
+      large.alt = link.querySelector('img')?.alt ?? '';
+      title.textContent = link.dataset.title ?? '';
+      title.hidden = !link.dataset.title;
+      caption.textContent = link.dataset.caption ?? '';
+      count.textContent = group.length > 1 ? `${index + 1} / ${group.length}` : '';
+      prev.hidden = next.hidden = group.length < 2;
+      // 단추를 빠르게 두 번 누르면 사진이 선택돼 색이 덮이므로, 넘길 때마다 선택을 지운다.
+      window.getSelection()?.removeAllRanges();
+    };
+
+    for (const link of all) {
+      link.addEventListener('click', (event) => {
+        if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+        event.preventDefault();
+        const box = link.closest('[data-zoom-group]');
+        group = box ? Array.from(box.querySelectorAll<HTMLAnchorElement>('a[data-zoom]')) : [link];
+        show(group.indexOf(link));
+        dialog.showModal();
+      });
+    }
+
+    prev.addEventListener('click', () => show(index - 1));
+    next.addEventListener('click', () => show(index + 1));
+    dialog.addEventListener('keydown', (event) => {
+      if (group.length < 2) return;
+      if (event.key === 'ArrowLeft') show(index - 1);
+      if (event.key === 'ArrowRight') show(index + 1);
+    });
+    // 사진 바깥을 누르면 닫는다.
+    dialog.addEventListener('click', (event) => {
+      if (event.target === dialog) dialog.close();
+    });
+    dialog.addEventListener('close', () => group[index]?.focus({ preventScroll: true }));
+  }
+</script>

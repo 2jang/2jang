@@ -1,0 +1,121 @@
+---
+import '@fontsource-variable/dm-sans/wght.css';
+import '../styles/global.css';
+import Icon from '../components/Icon.astro';
+import { profile } from '../data/projects';
+
+interface Props {
+  title: string;
+  description?: string;
+  /** 검색에 잡히면 안 되는 페이지(404 등)면 true */
+  noindex?: boolean;
+}
+
+const { title, description = '백엔드 개발자 조현우의 포트폴리오', noindex = false } = Astro.props;
+const home = import.meta.env.BASE_URL;
+const year = new Date().getFullYear();
+
+// 링크를 붙였을 때 보이는 미리보기 정보. 그림은 scripts/make-site-images.mjs 로 만든다.
+const pageUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : undefined;
+const shareImage = Astro.site ? new URL(`${home}og-image.png`, Astro.site).href : undefined;
+---
+
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#101311" />
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex" />}
+    {pageUrl && !noindex && <link rel="canonical" href={pageUrl} />}
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={`${profile.name} 포트폴리오`} />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    {pageUrl && <meta property="og:url" content={pageUrl} />}
+    {
+      shareImage && (
+        <>
+          <meta property="og:image" content={shareImage} />
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content="630" />
+          <meta property="og:image:alt" content="Backend Developer. 백엔드 개발자 조현우의 포트폴리오" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:image" content={shareImage} />
+        </>
+      )
+    }
+    <link rel="icon" href={`${home}favicon.ico`} sizes="32x32" />
+    <link rel="icon" type="image/svg+xml" href={`${home}favicon.svg`} />
+    <title>{title}</title>
+    <slot name="head" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">본문으로 이동</a>
+    <header class="topbar">
+      <div class="wrap nav-wrap">
+        <a class="brand" href={home} aria-label={`${profile.name} 포트폴리오 홈`}>
+          <span class="brand-mark" aria-hidden="true"><Icon name="terminal" size={22} /></span>
+          <b>{profile.brand[0]}<span>.</span>{profile.brand[1]}</b>
+        </a>
+        <nav class="nav-links" id="site-nav" aria-label="주요 메뉴">
+          <a href={`${home}#about`}>소개</a>
+          <a href={`${home}#stack`}>기술 스택</a>
+          <a href={`${home}#projects`}>프로젝트</a>
+        </nav>
+        <a class="github-link" href={profile.github} target="_blank" rel="noopener">
+          <Icon name="github" size={16} />GitHub
+        </a>
+        <button
+          class="menu-toggle"
+          id="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          aria-label="메뉴 열기"
+        >
+          <span class="when-closed"><Icon name="menu" /></span>
+          <span class="when-open"><Icon name="x" /></span>
+        </button>
+      </div>
+    </header>
+    <main id="main" tabindex="-1"><slot /></main>
+    <footer class="footer">
+      <div class="wrap footer-inner">
+        <span>© {year} {profile.name}</span>
+        <a href="#top">맨 위로</a>
+      </div>
+    </footer>
+
+    <script>
+      // 좁은 화면에서 메뉴 단추로 메뉴를 열고 닫는다.
+      const menu = document.getElementById('menu-toggle');
+      const nav = document.getElementById('site-nav');
+
+      if (menu && nav) {
+        const bar = menu.closest('.nav-wrap');
+        const setMenu = (open: boolean) => {
+          menu.setAttribute('aria-expanded', String(open));
+          menu.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
+          nav.classList.toggle('is-open', open);
+        };
+        const isOpen = () => menu.getAttribute('aria-expanded') === 'true';
+
+        menu.addEventListener('click', () => setMenu(!isOpen()));
+        nav.addEventListener('click', () => setMenu(false));
+        document.addEventListener('click', (event) => {
+          if (isOpen() && bar && !event.composedPath().includes(bar)) setMenu(false);
+        });
+        document.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape' && isOpen()) {
+            setMenu(false);
+            menu.focus();
+          }
+        });
+        matchMedia('(max-width: 620px)').addEventListener('change', () => setMenu(false));
+      }
+    </script>
+  </body>
+</html>

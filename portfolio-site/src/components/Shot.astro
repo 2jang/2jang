@@ -1,0 +1,33 @@
+---
+// 그림 한 장(소개 그림, 동작 흐름 그림 등). 누르면 크게 보인다.
+// src 는 public/images 기준 경로다. 예: 'washcall/flow.webp'. src 가 없으면 사진이 들어갈 자리만 표시한다.
+import Icon from './Icon.astro';
+import { imageSize } from '../lib/image-size';
+import { imageUrl } from '../lib/paths';
+
+interface Props {
+  src?: string;
+  alt: string;
+  caption?: string;
+}
+
+const { src, alt, caption } = Astro.props;
+const url = src ? imageUrl(src) : undefined;
+const size = src ? await imageSize(src) : undefined;
+---
+
+<figure class="shot">
+  {
+    url ? (
+      <a class="zoomable" href={url} data-zoom data-caption={caption ?? alt} aria-label={`${alt} 크게 보기`}>
+        <img src={url} alt={alt} width={size?.width} height={size?.height} loading="lazy" decoding="async" />
+        <span class="detail-expand" aria-hidden="true">
+          <Icon name="expand" size={17} />
+        </span>
+      </a>
+    ) : (
+      <div class="placeholder">사진 자리: {alt}</div>
+    )
+  }
+  {caption && <figcaption>{caption}</figcaption>}
+</figure>

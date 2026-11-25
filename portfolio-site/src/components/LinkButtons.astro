@@ -1,0 +1,52 @@
+---
+// 저장소와 서비스 링크. 서비스는 실제로 열릴 때(demo.up)만 표시한다.
+import Icon from './Icon.astro';
+import type { RepoLink, DemoLink } from '../data/projects';
+
+interface Props {
+  repos?: RepoLink[];
+  demo?: DemoLink;
+  /** 메인 페이지 카드처럼 좁은 곳에서 글자 링크만 쓴다. */
+  plain?: boolean;
+}
+
+const { repos = [], demo, plain = false } = Astro.props;
+const showDemo = demo && demo.up;
+// 상세 페이지: 저장소가 하나뿐이면 'GitHub 저장소'라고 적는다.
+// 메인 카드: 자리가 좁아 'GitHub (백엔드)'를 아이콘 옆에 '백엔드'로만 적는다.
+const repoLabel = (label: string) => {
+  if (plain) return label.replace(/^GitHub \((.+)\)$/, '$1');
+  return label === 'GitHub' ? 'GitHub 저장소' : label;
+};
+---
+
+{
+  (repos.length > 0 || showDemo) && (
+    <div class={plain ? 'card-links' : 'detail-links'}>
+      {showDemo && (
+        <a
+          class={plain ? undefined : 'detail-repository is-demo'}
+          href={demo.url}
+          target="_blank"
+          rel="noopener"
+          title={demo.note}
+        >
+          <Icon name="external" size={plain ? 14 : 16} />
+          서비스 열기
+        </a>
+      )}
+      {repos.map((repo) => (
+        <a
+          class={plain ? undefined : 'detail-repository'}
+          href={repo.url}
+          target="_blank"
+          rel="noopener"
+          aria-label={plain ? `${repo.label} 저장소` : undefined}
+        >
+          <Icon name="github" size={plain ? 14 : 16} />
+          {repoLabel(repo.label)}
+        </a>
+      ))}
+    </div>
+  )
+}

@@ -1,0 +1,56 @@
+---
+// 없는 주소로 들어왔을 때 보여 주는 페이지. 3초 뒤 메인 페이지로 옮긴다.
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import { profile } from '../data/projects';
+
+const home = import.meta.env.BASE_URL;
+const seconds = 3;
+---
+
+<Base
+  title={`페이지를 찾을 수 없습니다 · ${profile.name} 포트폴리오`}
+  description="찾으시는 페이지가 없습니다. 메인 페이지로 이동합니다."
+  noindex
+>
+  <Fragment slot="head">
+    <!-- 스크립트가 꺼져 있어도 3초 뒤 메인 페이지로 옮긴다. -->
+    <noscript><meta http-equiv="refresh" content={`${seconds};url=${home}`} /></noscript>
+  </Fragment>
+
+  <section class="hero notfound" aria-labelledby="notfound-title">
+    <div class="wrap hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow hero-eyebrow"><span class="intro-line" aria-hidden="true"></span>PAGE NOT FOUND</p>
+        <h1 id="notfound-title" lang="en">404<span aria-hidden="true">.</span></h1>
+        <p class="hero-intro">
+          찾으시는 페이지가 없습니다.<br />
+          주소가 바뀌었거나 잘못 입력됐을 수 있습니다.
+        </p>
+        <p class="notfound-timer" role="status">
+          <span class="count" data-countdown>{seconds}</span>초 후 메인 페이지로 이동합니다.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href={home} data-home><Icon name="arrow-left" size={17} />메인으로 가기</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<script>
+  // 1초마다 숫자를 줄이고 0이 되면 메인 페이지로 옮긴다.
+  const number = document.querySelector<HTMLElement>('[data-countdown]');
+  const home = document.querySelector<HTMLAnchorElement>('[data-home]')?.href ?? '/';
+  let left = Number(number?.textContent) || 3;
+
+  const timer = setInterval(() => {
+    left -= 1;
+    if (number) number.textContent = String(Math.max(left, 0));
+    if (left <= 0) {
+      clearInterval(timer);
+      // 뒤로 가기를 눌렀을 때 이 페이지로 돌아와 다시 넘어가지 않도록 기록을 바꿔 쓴다.
+      window.location.replace(home);
+    }
+  }, 1000);
+</script>

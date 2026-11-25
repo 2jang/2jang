@@ -1,0 +1,26 @@
+---
+// 선으로 그린 아이콘. 색은 글자색(currentColor)을 따른다. 경로는 src/lib/icons.ts 에 있다.
+import { iconPaths, type IconName } from '../lib/icons';
+
+interface Props {
+  name: IconName;
+  size?: number;
+}
+
+const { name, size = 19 } = Astro.props;
+---
+
+<svg
+  class="icon"
+  width={size}
+  height={size}
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.8"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  aria-hidden="true"
+  focusable="false"
+  set:html={iconPaths[name]}
+/>
