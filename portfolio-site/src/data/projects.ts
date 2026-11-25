@@ -180,8 +180,8 @@ export const subProjects: Project[] = [
     demo: { url: 'https://easygym.2jang.dev', up: true },
     cover: {
       kind: 'browser-phone',
-      browser: 'easygym/pc/01-main.webp',
-      phone: 'easygym/mobile/13-pay-form.webp',
+      browser: 'easygym/pc/05-list.webp',
+      phone: 'easygym/mobile/01-main.webp',
       tint: '#c8b9a8',
     },
   },
@@ -222,7 +222,7 @@ export const subProjects: Project[] = [
     cover: {
       kind: 'browser-phone',
       browser: 'suwon-ai/pc/27-pathfinder-route.webp',
-      phone: 'suwon-ai/mobile/30-clickbattle-scoreboard.webp',
+      phone: 'suwon-ai/mobile/27-pathfinder-route.webp',
       tint: '#bdd0a6',
     },
   },
