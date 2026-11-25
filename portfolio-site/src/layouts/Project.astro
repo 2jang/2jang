@@ -1,0 +1,154 @@
+---
+import Base from './Base.astro';
+import Lightbox from '../components/Lightbox.astro';
+import LinkButtons from '../components/LinkButtons.astro';
+import Slider from '../components/Slider.astro';
+import { allProjects, findProject, isMainProject, profile } from '../data/projects';
+import { shotSets } from '../data/shots';
+
+interface MetaRow {
+  label: string;
+  value: string;
+}
+
+interface Props {
+  frontmatter: {
+    /** src/data/projects.ts 의 key. 제목·분야·링크·사진·이전/다음 프로젝트를 가져온다. */
+    project: string;
+    /** 제목 아래 요약. 없으면 projects.ts 의 summary 를 쓴다. */
+    lead?: string;
+    /** 이름에 '기간'이나 '역할'이 들어간 줄은 제목 오른쪽에, 나머지는 본문 위 표에 놓는다. */
+    meta?: MetaRow[];
+    stack?: string[];
+  };
+  headings?: { depth: number; slug: string; text: string }[];
+}
+
+const { frontmatter, headings = [] } = Astro.props;
+const base = import.meta.env.BASE_URL;
+
+const project = findProject(frontmatter.project);
+if (!project) throw new Error(`projects.ts 에 '${frontmatter.project}' 이 없습니다.`);
+
+const lead = frontmatter.lead ?? project.summary;
+const main = isMainProject(project.key);
+const listUrl = `${base}${main ? '#projects' : '#more'}`;
+const toc = headings.filter((h) => h.depth === 2);
+
+const rows = frontmatter.meta ?? [];
+const isHeadline = (row: MetaRow) => /기간|역할/.test(row.label);
+const headline = rows.some(isHeadline)
+  ? rows.filter(isHeadline)
+  : [
+      { label: '참여 기간', value: project.period },
+      { label: '담당 역할', value: project.role },
+    ];
+const facts = rows.filter((row) => !isHeadline(row));
+const stack = frontmatter.stack ?? [];
+
+const index = allProjects.findIndex((item) => item.key === project.key);
+const previous = allProjects[(index - 1 + allProjects.length) % allProjects.length];
+const next = allProjects[(index + 1) % allProjects.length];
+---
+
+<Base title={`${project.title} · ${profile.name} 포트폴리오`} description={lead}>
+  <div class="wrap detail-main">
+    <nav class="detail-trail" aria-label="현재 위치">
+      <a href={listUrl}>{main ? '대표 프로젝트' : '그 밖의 프로젝트'}</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">{project.title}</span>
+    </nav>
+
+    <header class="detail-heading">
+      <div class="detail-heading-copy">
+        <p class="detail-type">
+          <span class="detail-type-rule" aria-hidden="true"></span>
+          {project.service}
+          {project.award && <span class="detail-award">{project.award}</span>}
+        </p>
+        <h1>{project.title}</h1>
+        <p class="detail-deck">{lead}</p>
+      </div>
+      <div class="detail-heading-meta">
+        <dl>
+          {
+            headline.map((row) => (
+              <div>
+                <dt>{row.label}</dt>
+                <dd>{row.value}</dd>
+              </div>
+            ))
+          }
+        </dl>
+        <LinkButtons repos={project.repos} demo={project.demo} />
+        {project.demo?.up && project.demo.note && <p class="detail-note">{project.demo.note}</p>}
+      </div>
+    </header>
+
+    {
+      shotSets[project.key] && (
+        <div class="detail-hero" style={project.heroTint ? `--hero-tint:${project.heroTint}` : undefined}>
+          <Slider set={project.key} />
+        </div>
+      )
+    }
+
+    <div class="detail-body">
+      {
+        toc.length > 0 && (
+          <aside class="detail-aside">
+            <nav aria-label="이 프로젝트 목차">
+              <p>목차</p>
+              {toc.map((item) => (
+                <a href={`#${item.slug}`}>{item.text}</a>
+              ))}
+            </nav>
+          </aside>
+        )
+      }
+
+      <div class="detail-sections">
+        {
+          (facts.length > 0 || stack.length > 0) && (
+            <dl class="detail-facts">
+              {facts.map((row) => (
+                <div>
+                  <dt>{row.label}</dt>
+                  <dd>{row.value}</dd>
+                </div>
+              ))}
+              {stack.length > 0 && (
+                <div>
+                  <dt>사용 기술</dt>
+                  <dd>
+                    <ul class="detail-tags">
+                      {stack.map((item) => (
+                        <li>{item}</li>
+                      ))}
+                    </ul>
+                  </dd>
+                </div>
+              )}
+            </dl>
+          )
+        }
+        <article class="case-prose">
+          <slot />
+        </article>
+      </div>
+    </div>
+
+    <nav class="detail-more" aria-label="다른 프로젝트 보기">
+      <a class="detail-sibling" href={`${base}${previous.path}`}>
+        <span>이전 프로젝트</span>
+        <strong>{previous.title}</strong>
+      </a>
+      <a class="detail-sibling" href={`${base}${next.path}`}>
+        <span>다음 프로젝트</span>
+        <strong>{next.title}</strong>
+      </a>
+    </nav>
+    <div class="detail-bottom"><a href={`${base}#projects`}>전체 프로젝트 보기</a></div>
+  </div>
+  <Lightbox />
+</Base>

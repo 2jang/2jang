@@ -1,0 +1,94 @@
+---
+// 프로젝트 카드의 표지 그림. 화면 사진을 브라우저 창이나 휴대폰 틀에 넣어 비스듬히 놓는다.
+import { imageUrl } from '../lib/paths';
+import type { Cover } from '../data/projects';
+
+interface Props {
+  cover: Cover;
+  /** 화면 아래쪽에 있어 나중에 불러와도 되는 카드면 true */
+  lazy?: boolean;
+}
+
+const { cover, lazy = false } = Astro.props;
+const loading = lazy ? 'lazy' : 'eager';
+const decoding = lazy ? 'async' : 'auto';
+const tint = 'tint' in cover && cover.tint ? `--card-tint:${cover.tint}` : undefined;
+---
+
+{
+  cover.kind === 'browsers' && (
+    <div class:list={['project-art', tint ? 'art-pair' : 'art-map']} style={tint} aria-hidden="true">
+      <div class="browser-frame map-back">
+        <div class="browser-bar">
+          <i />
+          <i />
+          <i />
+        </div>
+        <img src={imageUrl(cover.back)} alt="" loading={loading} decoding={decoding} />
+      </div>
+      <div class="browser-frame map-front">
+        <div class="browser-bar">
+          <i />
+          <i />
+          <i />
+        </div>
+        <img src={imageUrl(cover.front)} alt="" loading={loading} decoding={decoding} />
+      </div>
+    </div>
+  )
+}
+{
+  cover.kind === 'phones' && (
+    <div class="project-art art-circle" aria-hidden="true">
+      <div class="phone-frame circle-a">
+        <img src={imageUrl(cover.left)} alt="" loading={loading} decoding={decoding} />
+      </div>
+      <div class="phone-frame circle-b">
+        <img src={imageUrl(cover.right)} alt="" loading={loading} decoding={decoding} />
+      </div>
+    </div>
+  )
+}
+{
+  cover.kind === 'window-phone' && (
+    <div class="project-art art-privacy" aria-hidden="true">
+      <div class="privacy-window">
+        <img src={imageUrl(cover.window)} alt="" loading={loading} decoding={decoding} />
+      </div>
+      <div class="phone-frame privacy-phone">
+        <img src={imageUrl(cover.phone)} alt="" loading={loading} decoding={decoding} />
+      </div>
+    </div>
+  )
+}
+{
+  cover.kind === 'browser-phone' && (
+    <div class="project-art art-duo" style={tint} aria-hidden="true">
+      <div class="browser-frame">
+        <div class="browser-bar">
+          <i />
+          <i />
+          <i />
+        </div>
+        <img src={imageUrl(cover.browser)} alt="" loading={loading} decoding={decoding} />
+      </div>
+      <div class="phone-frame">
+        <img src={imageUrl(cover.phone)} alt="" loading={loading} decoding={decoding} />
+      </div>
+    </div>
+  )
+}
+{
+  cover.kind === 'browser' && (
+    <div class="project-art art-standard" style={tint} aria-hidden="true">
+      <div class="browser-frame">
+        <div class="browser-bar">
+          <i />
+          <i />
+          <i />
+        </div>
+        <img src={imageUrl(cover.image)} alt="" loading={loading} decoding={decoding} />
+      </div>
+    </div>
+  )
+}
