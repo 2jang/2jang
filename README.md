@@ -7,8 +7,6 @@
 
 ### 💬 About me
 
-<img height="180em" width="50%" align="right" src="https://github-readme-stats-ten-olive-80.vercel.app/api?username=2jang&show_icons=true&theme=default&hide_border=false&include_all_commits=false&count_private=true" alt="GitHub Stats" />
-
 - 🔭 I'm currently working as a Backend Team Lead
 - 🌱 I'm currently learning AI, specifically Transformers
 - 👨‍💻 My main language is JavaScript and Python
