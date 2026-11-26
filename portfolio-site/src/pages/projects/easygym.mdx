@@ -17,6 +17,10 @@ stack:
   - MySQL
 ---
 
+import Diagram from '../../components/Diagram.astro';
+import Schema from '../../components/Schema.astro';
+import { easygymArch } from '../../data/diagrams';
+import { easygymSchema } from '../../data/schemas';
 
 ## 프로젝트 소개
 
@@ -49,12 +53,23 @@ stack:
 
 ## 구조
 
+<Diagram {...easygymArch} caption="연두색으로 표시한 부분이 직접 만든 부분입니다." />
+
 | 구성 | 내용 |
 | --- | --- |
 | 서버 | Spring Boot 3(MVC) 하나에 화면(JSP)과 요청 처리가 함께 있는 구조 |
 | 데이터 | MySQL, MyBatis |
 | 외부 연동 | 토스페이먼츠 결제위젯(테스트), Cloudflare Turnstile, LLM(OpenRouter), 카카오맵, 가입 인증 메일 |
 | 배포 | 라즈베리파이 서버, GitHub Actions 빌드 |
+
+### 데이터 모델
+
+결제는 회원과 시설을 잇는 `payform_tbl`에 기록합니다. 구매하면 회원의 포인트를 차감하고, 환불하면 결제 상태를 취소로 바꾸고 포인트를 돌려줍니다.
+
+<Schema
+  {...easygymSchema}
+  caption="저장소에 테이블 정의(DDL)가 없어 매퍼(XML)의 조인을 기준으로 그렸습니다. 연두색은 제가 담당한 결제 테이블입니다."
+/>
 
 ## 사례 · Linux 서버에서 화면이 깨진 문제
 

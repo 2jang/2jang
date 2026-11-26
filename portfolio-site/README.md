@@ -24,12 +24,14 @@ npm run dev
 | `src/data/projects.ts` | 프로젝트 목록(제목, 분야, 한 줄 소개, 기간, 역할, 대표 기술, 링크, 표지)과 수상, 기술 스택, 머리글 이름, 메일 주소 |
 | `src/data/shots.ts` | 프로젝트별 화면 캡처 목록과 사진 설명 |
 | `src/data/diagrams.ts` | 구조도의 박스와 화살표 좌표 |
+| `src/data/schemas.ts` | DB 구조 그림의 표, 컬럼, 관계 |
 | `src/components/ProjectCard.astro` | 메인 페이지의 프로젝트 카드 |
 | `src/components/ProjectCover.astro` | 카드 표지 그림(브라우저 창, 휴대폰 틀) |
 | `src/components/Slider.astro` | 화면 캡처를 옆으로 넘겨 보는 슬라이더. 화살표 단추를 누르거나 마우스로 끌어서 넘깁니다. 상세 페이지 위쪽에 놓입니다. |
 | `src/components/Lightbox.astro` | 사진을 누르면 한 장을 크게 보여 주고 아래에 설명을 적는 창 |
 | `src/components/Shot.astro` | 그림 한 장(소개 그림, 동작 흐름 그림) |
 | `src/components/Diagram.astro` | 구조도를 SVG 로 그리는 컴포넌트 |
+| `src/components/Schema.astro` | DB 표와 관계를 SVG 로 그리는 컴포넌트. 본문에서는 `구조` 아래 `### 데이터 모델` 에 놓습니다. |
 | `src/components/Icon.astro`, `src/lib/icons.ts` | 아이콘 |
 | `src/components/Todo.astro` | 배포 전에 채워야 하는 값 표시 |
 | `src/layouts/` | 공통 레이아웃(`Base.astro`)과 프로젝트 상세 레이아웃(`Project.astro`) |

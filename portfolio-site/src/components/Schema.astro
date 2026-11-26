@@ -1,0 +1,155 @@
+---
+// DB 표와 관계를 SVG로 그린다. 표의 위치와 컬럼은 src/data/schemas.ts 에 있다.
+// 관계선은 표의 옆(이름 줄 높이)이나 위아래 가운데에서 나와 직각으로 꺾인다.
+import type { SchemaData, SchemaTable, Side } from '../data/schemas';
+
+interface Props extends SchemaData {
+  caption?: string;
+}
+
+const { label, width, tables, links = [], marks = [], notes = [], caption } = Astro.props;
+
+const HEAD = 30;
+const NOTE = 18;
+const ROW = 18;
+const PAD = 6;
+
+const headOf = (table: SchemaTable) => HEAD + (table.note ? NOTE : 0);
+const heightOf = (table: SchemaTable) =>
+  headOf(table) + (table.columns?.length ? PAD + table.columns.length * ROW + PAD : 4);
+
+const byId = new Map(tables.map((table) => [table.id, table]));
+
+function anchor(id: string, side: Side) {
+  const table = byId.get(id);
+  if (!table) throw new Error(`schemas.ts 에 표 '${id}' 가 없습니다.`);
+  if (side === 'left') return { x: table.x, y: table.y + 15 };
+  if (side === 'right') return { x: table.x + table.w, y: table.y + 15 };
+  if (side === 'top') return { x: table.x + table.w / 2, y: table.y };
+  return { x: table.x + table.w / 2, y: table.y + heightOf(table) };
+}
+
+const sideways = (side: Side) => side === 'left' || side === 'right';
+
+// 관계 수(1, N)를 선 끝 바로 바깥에 적는다.
+function endTag(point: { x: number; y: number }, side: Side, text?: string) {
+  if (!text) return undefined;
+  if (side === 'left') return { text, x: point.x - 7, y: point.y - 5, anchor: 'end' };
+  if (side === 'right') return { text, x: point.x + 7, y: point.y - 5, anchor: 'start' };
+  if (side === 'top') return { text, x: point.x + 7, y: point.y - 6, anchor: 'start' };
+  return { text, x: point.x + 7, y: point.y + 15, anchor: 'start' };
+}
+
+const paths: string[] = [];
+const tags = new Map<string, { text: string; x: number; y: number; anchor: string }>();
+
+for (const link of links) {
+  const [fromId, fromSide] = link.from;
+  const [toId, toSide] = link.to;
+  const a = anchor(fromId, fromSide);
+  const b = anchor(toId, toSide);
+
+  if (sideways(fromSide) && sideways(toSide)) {
+    const turn = link.via ?? (a.x + b.x) / 2;
+    paths.push(`M${a.x} ${a.y}H${turn}V${b.y}H${b.x}`);
+  } else if (!sideways(fromSide) && !sideways(toSide)) {
+    const turn = link.via ?? (a.y + b.y) / 2;
+    paths.push(`M${a.x} ${a.y}V${turn}H${b.x}V${b.y}`);
+  } else if (sideways(fromSide)) {
+    paths.push(`M${a.x} ${a.y}H${b.x}V${b.y}`);
+  } else {
+    paths.push(`M${a.x} ${a.y}V${b.y}H${b.x}`);
+  }
+
+  // 같은 자리에 같은 글자가 겹치지 않게 한 번만 적는다.
+  for (const tag of [endTag(a, fromSide, link.ends?.[0]), endTag(b, toSide, link.ends?.[1])]) {
+    if (tag) tags.set(`${tag.x},${tag.y},${tag.text}`, tag);
+  }
+}
+
+const bottom = Math.max(...tables.map((table) => table.y + heightOf(table)));
+const noteTop = bottom + 28;
+const height = notes.length > 0 ? noteTop + (notes.length - 1) * 18 + 12 : bottom + 14;
+---
+
+<figure class="diagram schema">
+  <div class="scroll">
+    <svg viewBox={`0 0 ${width} ${height}`} role="img" aria-label={label} font-size="13">
+      {paths.map((d) => <path d={d} fill="none" stroke="var(--dia-edge)" stroke-width="1.25" />)}
+
+      {
+        tables.map((table) => {
+          const head = headOf(table);
+          return (
+            <g>
+              <rect
+                x={table.x}
+                y={table.y}
+                width={table.w}
+                height={heightOf(table)}
+                rx="8"
+                fill={table.main ? 'var(--dia-main)' : 'var(--dia-box)'}
+                stroke={table.main ? 'var(--dia-main-edge)' : 'var(--dia-edge)'}
+                stroke-width={table.main ? 2 : 1.25}
+              />
+              <text x={table.x + 12} y={table.y + 20} font-weight="600" fill="var(--dia-text)">
+                {table.name}
+              </text>
+              {table.note && (
+                <text x={table.x + 12} y={table.y + 38} font-size="11.5" fill="var(--dia-sub)">
+                  {table.note}
+                </text>
+              )}
+              {table.columns && table.columns.length > 0 && (
+                <path
+                  d={`M${table.x} ${table.y + head}H${table.x + table.w}`}
+                  stroke={table.main ? 'var(--dia-main-edge)' : 'var(--dia-edge)'}
+                  stroke-width="1"
+                  opacity="0.55"
+                />
+              )}
+              {(table.columns ?? []).map((column, index) => {
+                const y = table.y + head + PAD + index * ROW + 13;
+                return (
+                  <>
+                    {column.key && (
+                      <text class="schema-key" x={table.x + 12} y={y}>
+                        {column.key}
+                      </text>
+                    )}
+                    <text class="schema-column" x={table.x + 38} y={y}>
+                      {column.name}
+                    </text>
+                  </>
+                );
+              })}
+            </g>
+          );
+        })
+      }
+
+      {
+        [...tags.values()].map((tag) => (
+          <text class="schema-count" x={tag.x} y={tag.y} text-anchor={tag.anchor}>
+            {tag.text}
+          </text>
+        ))
+      }
+      {
+        marks.map((mark) => (
+          <text x={mark.x} y={mark.y} font-size="11.5" font-weight="600" fill="var(--dia-sub)">
+            {mark.text}
+          </text>
+        ))
+      }
+      {
+        notes.map((note, index) => (
+          <text x="8" y={noteTop + index * 18} font-size="11.5" fill="var(--dia-sub)">
+            {note}
+          </text>
+        ))
+      }
+    </svg>
+  </div>
+  {caption && <figcaption>{caption}</figcaption>}
+</figure>

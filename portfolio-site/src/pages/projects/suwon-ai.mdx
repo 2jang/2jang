@@ -15,6 +15,8 @@ stack:
   - STOMP WebSocket
 ---
 
+import Diagram from '../../components/Diagram.astro';
+import { suwonArch } from '../../data/diagrams';
 
 ## 프로젝트 소개
 
@@ -45,6 +47,11 @@ stack:
 - **팀원 작업** 메인과 학부 페이지 3개, 메뉴, 교수 데이터, 모바일 대응, 서버의 길찾기 시간 표와 클릭 집계·방송.
 
 ## 구조
+
+<Diagram
+  {...suwonArch}
+  caption="연두색으로 표시한 부분이 직접 만든 부분입니다. 서버는 팀원이 만들었고, LLM 연결은 해커톤이 끝난 뒤 제가 바꿨습니다."
+/>
 
 | 구성 | 내용 |
 | --- | --- |

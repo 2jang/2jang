@@ -16,6 +16,10 @@ stack:
   - MySQL
 ---
 
+import Diagram from '../../components/Diagram.astro';
+import Schema from '../../components/Schema.astro';
+import { timetableArch } from '../../data/diagrams';
+import { timetableSchema } from '../../data/schemas';
 
 ## 프로젝트 소개
 
@@ -50,12 +54,23 @@ stack:
 
 ## 구조
 
+<Diagram {...timetableArch} caption="연두색으로 표시한 부분이 직접 만든 부분입니다." />
+
 | 구성 | 내용 |
 | --- | --- |
 | 화면 | 빌드 없이 동작하는 HTML 파일 하나, GitHub Pages 배포 (팀원 작업) |
 | 서버 | FastAPI와 SQLAlchemy, 엔드포인트 25개 |
 | 데이터 | MySQL, Alembic 마이그레이션, JSON 시드 |
 | 배포 | 학교가 제공한 팀 서버에서 실행하고 cloudflared 터널로 공개 |
+
+### 데이터 모델
+
+모델 18개 중 강좌와 추천에 쓰이는 테이블입니다. 강좌(`Course`)는 분반마다 한 행이고, 요일·교시·강의실은 `CourseSchedule`에 따로 둡니다.
+
+<Schema
+  {...timetableSchema}
+  caption="연두색은 학교 데이터에 맞게 다시 설계한 테이블입니다(사례 1). 나머지 테이블의 뼈대는 팀원이 만들었습니다."
+/>
 
 ## 사례 1 · 학교의 실제 데이터에 맞지 않던 강좌 모델
 
