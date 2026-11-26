@@ -17,8 +17,12 @@ stack:
   - PWA
 ---
 
+import Diagram from '../../components/Diagram.astro';
+import Schema from '../../components/Schema.astro';
 import Shot from '../../components/Shot.astro';
 import Todo from '../../components/Todo.astro';
+import { washcallArch } from '../../data/diagrams';
+import { washcallSchema } from '../../data/schemas';
 
 ## 프로젝트 소개
 
@@ -55,16 +59,21 @@ import Todo from '../../components/Todo.astro';
 
 ## 구조
 
-<Shot
-  src="washcall/flow.webp"
-  alt="WashCall 동작 흐름. 센서의 상태 수집, 실시간 화면 갱신, 완료 알림, 추천 정보 캐시의 네 흐름"
-  caption="동작 흐름. 파란색으로 표시한 부분이 직접 만든 부분입니다."
-/>
+<Diagram {...washcallArch} caption="연두색으로 표시한 부분이 직접 만든 부분입니다." />
 
 1. 센서가 세탁기 상태를 판정해 서버로 보냅니다. 기기마다 발급한 JWT로 인증합니다.
 2. 서버가 상태를 MySQL에 저장하고 시작·탈수·완료를 판단합니다.
 3. 서버가 WebSocket으로 웹 화면을 갱신하고, 완료되면 FCM으로 푸시를 보냅니다.
 4. 날씨와 AI 추천 문구는 센서 이벤트가 들어올 때 백그라운드에서 갱신해 두고, 사용자 요청에는 캐시로 응답합니다.
+
+### 데이터 모델
+
+세탁실 구독은 계속 유지하고, 기기 완료 알림은 한 번 보내면 지워지도록 테이블을 나눴습니다. 날씨와 AI 추천 문구는 Redis 없이 DB 테이블을 캐시로 씁니다.
+
+<Schema
+  {...washcallSchema}
+  caption="운영 DB를 기준으로 한 요약입니다. 연두색은 제가 설계한 테이블이고, 평균 시간·혼잡도·진동 기준값 테이블은 팀원이 만든 집계에 쓰입니다."
+/>
 
 ## 사례 · 병렬 조회가 DB 커넥션 풀을 고갈시킨 문제
 

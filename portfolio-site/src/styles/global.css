@@ -32,6 +32,7 @@
   --dia-sub: var(--muted);
   --dia-main: #26341b;
   --dia-main-edge: var(--lime);
+  --dia-key: var(--lime-dim);
 
   --mono: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
   --sans: 'DM Sans Variable', 'Pretendard', 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
@@ -128,6 +129,10 @@ img::selection {
 .icon {
   display: block;
   flex-shrink: 0;
+}
+
+.nowrap {
+  white-space: nowrap;
 }
 
 .skip-link:not(:focus) {
@@ -338,7 +343,7 @@ mark.todo {
 .hero h1 {
   color: #f1f3ef;
   font-family: 'DM Sans Variable', Arial, sans-serif;
-  font-size: clamp(5.1rem, 6.85vw, 6.85rem);
+  font-size: clamp(4.65rem, 6.2vw, 6.2rem);
   font-weight: 610;
   line-height: 0.92;
   letter-spacing: -0.08em;
@@ -351,7 +356,7 @@ mark.todo {
 .hero-intro {
   margin-top: 22px;
   color: #b9c1b9;
-  font-size: clamp(0.975rem, 1.15vw, 1.075rem);
+  font-size: clamp(1.06rem, 1.3vw, 1.2rem);
   line-height: 1.8;
   letter-spacing: -0.025em;
 }
@@ -1722,6 +1727,30 @@ figcaption {
   min-width: 620px;
 }
 
+/* DB 구조 그림 */
+.schema .scroll svg {
+  min-width: 700px;
+}
+
+.schema-column {
+  fill: var(--dia-text);
+  font-family: var(--mono);
+  font-size: 11.5px;
+}
+
+.schema-key {
+  fill: var(--dia-key);
+  font-family: var(--mono);
+  font-size: 9.5px;
+  font-weight: 700;
+}
+
+.schema-count {
+  fill: var(--dia-sub);
+  font-size: 11.5px;
+  font-weight: 600;
+}
+
 .shot .placeholder {
   display: grid;
   place-items: center;
@@ -1894,7 +1923,7 @@ body:has(.lightbox[open]) {
   }
 
   .hero h1 {
-    font-size: clamp(4.65rem, 8.25vw, 5.35rem);
+    font-size: clamp(4.25rem, 7.5vw, 4.9rem);
   }
 
   .label-bottom {
@@ -1954,11 +1983,11 @@ body:has(.lightbox[open]) {
   }
 
   .hero h1 {
-    font-size: clamp(4.1rem, 8vw, 5rem);
+    font-size: clamp(3.75rem, 7.3vw, 4.55rem);
   }
 
   .hero-intro {
-    font-size: 0.96rem;
+    font-size: 1.04rem;
     line-height: 1.75;
   }
 
@@ -2117,7 +2146,7 @@ body:has(.lightbox[open]) {
   }
 
   .hero h1 {
-    font-size: clamp(4.15rem, 14.5vw, 5.7rem);
+    font-size: clamp(3.8rem, 13.2vw, 5.2rem);
   }
 
   .hero::after {
@@ -2342,6 +2371,7 @@ body:has(.lightbox[open]) {
     --dia-group: #f1f4ef;
     --dia-edge: #8a958b;
     --dia-main: #eaf3dc;
+    --dia-key: #3f6b0c;
   }
 
   .nav-links,

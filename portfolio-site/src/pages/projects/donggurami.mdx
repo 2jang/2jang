@@ -24,7 +24,9 @@ stack:
 ---
 
 import Diagram from '../../components/Diagram.astro';
+import Schema from '../../components/Schema.astro';
 import { dongguramiArch, dongguramiDeploy } from '../../data/diagrams';
+import { dongguramiSchema } from '../../data/schemas';
 
 ## 프로젝트 소개
 
@@ -60,6 +62,14 @@ import { dongguramiArch, dongguramiDeploy } from '../../data/diagrams';
 <Diagram {...dongguramiArch} />
 
 제가 수정한 부분은 Security의 CORS·쿠키 설정, 현장 인증과 지원서 API, 그리고 아래 배포 스크립트입니다.
+
+### 데이터 모델
+
+테이블은 22개이고, 아래는 지원과 현장 인증에 관련된 부분입니다. 계정은 학생(`User`), 회장(`Leader`), 동아리연합회(`Admin`)가 테이블로 나뉘어 있습니다.
+
+<Schema {...dongguramiSchema} caption="연두색은 제가 만들었거나 제약을 고친 테이블입니다." />
+
+### 배포
 
 <Diagram {...dongguramiDeploy} caption="연두색으로 표시한 자가복구 단계가 직접 추가한 부분입니다." />
 

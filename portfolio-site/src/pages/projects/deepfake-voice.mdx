@@ -17,7 +17,9 @@ stack:
   - JavaScript
 ---
 
+import Diagram from '../../components/Diagram.astro';
 import Shot from '../../components/Shot.astro';
+import { deepfakeArch } from '../../data/diagrams';
 
 ## 프로젝트 소개
 
@@ -56,10 +58,9 @@ import Shot from '../../components/Shot.astro';
 
 ## 구조
 
-<Shot
-  src="deepfake-voice/flow.webp"
-  alt="DeepFake-Voice 동작 흐름. 위는 수집, 전처리, 분할, 학습, 평가로 이어지는 연구 파이프라인이고 아래는 브라우저에서 추론 엔진까지의 웹 데모 요청 흐름"
-  caption="위는 연구 파이프라인, 아래는 웹 데모의 요청 흐름입니다."
+<Diagram
+  {...deepfakeArch}
+  caption="위는 연구 파이프라인, 아래는 웹 데모입니다. 단독 프로젝트라 모두 직접 만들었고, 연두색은 아래 사례에서 다루는 검증 단계입니다."
 />
 
 - **연구 파이프라인** 수집, 전처리, 학습·평가셋 분할, 학습, 평가 순서로 Python 스크립트를 실행합니다.

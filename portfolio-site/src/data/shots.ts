@@ -27,7 +27,7 @@ export interface ExtraImage {
 
 export interface ShotSet {
   tabs: ShotTab[];
-  /** 슬라이더 밖에서 따로 쓰는 그림(소개 그림, 동작 흐름 그림) */
+  /** 슬라이더 밖에서 따로 쓰는 그림(프로젝트 소개 그림) */
   extras?: ExtraImage[];
   /** 슬라이더 아래에 적는 촬영 조건 */
   note?: string;
@@ -412,10 +412,7 @@ export const shotSets: Record<string, ShotSet> = {
 
   washcall: {
     note: '화면은 앱의 목업 모드(데모 데이터)로 촬영했습니다. 혼잡도 그래프만 운영 중에 쌓인 집계 값입니다. 화면 디자인과 화면 로직 대부분은 팀원 작업입니다.',
-    extras: [
-      { file: `${WCW}/pc/00-overview`, id: 'overview', device: 'pc' },
-      { file: `${WCW}/pc/01-flow`, id: 'flow', device: 'pc' },
-    ],
+    extras: [{ file: `${WCW}/pc/00-overview`, id: 'overview', device: 'pc' }],
     tabs: [
       {
         label: '모바일',
@@ -530,10 +527,7 @@ export const shotSets: Record<string, ShotSet> = {
 
   'deepfake-voice': {
     note: '로컬에서 실행해 평가용 음성 파일로 촬영한 화면입니다. 화면에 보이는 EER 수치는 데이터 분할을 고치기 전 값이라 최종 성능이 아닙니다.',
-    extras: [
-      { file: `${DF}/pc/00-overview`, id: 'overview', device: 'pc' },
-      { file: `${DF}/pc/00b-flow`, id: 'flow', device: 'pc' },
-    ],
+    extras: [{ file: `${DF}/pc/00-overview`, id: 'overview', device: 'pc' }],
     tabs: [
       {
         label: 'PC',
