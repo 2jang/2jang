@@ -17,9 +17,11 @@ stack:
   - PWA
 ---
 
+import Diagram from '../../components/Diagram.astro';
 import Schema from '../../components/Schema.astro';
 import Shot from '../../components/Shot.astro';
 import Todo from '../../components/Todo.astro';
+import { washcallArch } from '../../data/diagrams';
 import { washcallSchema } from '../../data/schemas';
 
 ## 프로젝트 소개
@@ -57,11 +59,7 @@ import { washcallSchema } from '../../data/schemas';
 
 ## 구조
 
-<Shot
-  src="washcall/flow.webp"
-  alt="WashCall 동작 흐름. 센서의 상태 수집, 실시간 화면 갱신, 완료 알림, 추천 정보 캐시의 네 흐름"
-  caption="동작 흐름. 파란색으로 표시한 부분이 직접 만든 부분입니다."
-/>
+<Diagram {...washcallArch} caption="연두색으로 표시한 부분이 직접 만든 부분입니다." />
 
 1. 센서가 세탁기 상태를 판정해 서버로 보냅니다. 기기마다 발급한 JWT로 인증합니다.
 2. 서버가 상태를 MySQL에 저장하고 시작·탈수·완료를 판단합니다.
