@@ -16,14 +16,14 @@ export interface DemoLink {
 /**
  * 카드 표지 그림. 사진 경로는 public/images 기준이다.
  * - browsers: 기울인 브라우저 창 두 장. tint 를 주면 그 바탕색을 쓴다.
- * - phones: 휴대폰 두 대
+ * - phones: 휴대폰 두 대. tint 를 주면 그 바탕색을 쓴다.
  * - window-phone: 창 한 장과 휴대폰 한 대
  * - browser-phone: 바탕색 위에 브라우저 창 한 장과 휴대폰 한 대
  * - browser: 바탕색 위에 브라우저 창 한 장(사진이 한 장뿐일 때)
  */
 export type Cover =
   | { kind: 'browsers'; back: string; front: string; tint?: string }
-  | { kind: 'phones'; left: string; right: string }
+  | { kind: 'phones'; left: string; right: string; tint?: string }
   | { kind: 'window-phone'; window: string; phone: string }
   | { kind: 'browser-phone'; browser: string; phone: string; tint: string }
   | { kind: 'browser'; image: string; tint: string };
@@ -224,6 +224,25 @@ export const subProjects: Project[] = [
       browser: 'suwon-ai/pc/01-home.webp',
       phone: 'suwon-ai/mobile/27-pathfinder-route.webp',
       tint: '#bdd0a6',
+    },
+  },
+  {
+    key: 'dbti',
+    title: 'DBTI',
+    domain: 'CHATBOT',
+    service: '반려견 성향 검사 카카오톡 챗봇',
+    summary:
+      '반려견 보호자를 위한 카카오톡 챗봇과 웹 성향 검사입니다. MBTI를 보내면 어울리는 견종을 추천하고, 웹에서 12문항에 답하면 반려견의 성격 유형과 양육 방법을 카드로 알려 줍니다.',
+    period: '2024.07 ~ 2024.08',
+    role: '팀장 · 백엔드',
+    tech: ['Flask', '카카오 i 오픈빌더', 'JavaScript'],
+    path: 'projects/dbti/',
+    repos: [{ label: 'GitHub', url: 'https://github.com/2jang/DBTI' }],
+    cover: {
+      kind: 'phones',
+      left: 'dbti/mobile/03-web-start.webp',
+      right: 'dbti/mobile/07-web-result.webp',
+      tint: '#bccbd3',
     },
   },
 ];

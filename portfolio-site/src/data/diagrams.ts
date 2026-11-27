@@ -369,3 +369,38 @@ export const deepfakeArch: DiagramData = {
     { x: 682, y: 260, text: '불러오기' },
   ],
 };
+
+export const dbtiArch: DiagramData = {
+  id: 'dbti-arch',
+  label: 'DBTI 시스템 구조',
+  viewBox: '0 48 760 340',
+  containers: [{ x: 352, y: 60, w: 232, h: 216, name: 'Flask 서버' }],
+  boxes: [
+    { x: 24, y: 92, w: 120, h: 56, name: '카카오톡', lines: ['챗봇 채널'] },
+    { x: 172, y: 92, w: 150, h: 56, name: '카카오 i 오픈빌더', lines: ['스킬 서버 호출'] },
+    { x: 368, y: 92, w: 200, h: 52, name: '견종 추천', lines: ['MBTI → 견종 카드'], main: true },
+    { x: 368, y: 152, w: 200, h: 52, name: '검사 결과 카드', lines: ['유형 설명 · 양육 방법'], main: true },
+    { x: 368, y: 212, w: 200, h: 52, name: '검사 페이지 · 결과 받기', lines: ['결과를 메모리에 보관'], main: true },
+    { x: 616, y: 60, w: 120, h: 56, name: 'CSV 정리', lines: ['유형 · 견종 데이터'], main: true },
+    { x: 616, y: 146, w: 120, h: 72, name: 'CSV 3종', lines: ['유형 · 견종 · 설명', '시작할 때 읽음'] },
+    { x: 24, y: 210, w: 180, h: 56, name: '브라우저', lines: ['웹 검사 12문항'] },
+    { x: 24, y: 320, w: 170, h: 56, name: '16Personalities', lines: ['MBTI 유형 페이지 16개'] },
+    { x: 230, y: 320, w: 170, h: 56, name: '크롤러', lines: ['MBTI 설명 수집 · 팀원 원형'] },
+  ],
+  arrows: [
+    'M144 120H172',
+    'M322 120H352',
+    'M204 238H352',
+    'M584 182H616',
+    'M676 116V146',
+    'M194 348H230',
+    'M400 348H676V218',
+  ],
+  labels: [
+    { x: 247, y: 166, anchor: 'middle', text: '/mbti_api · /kakao_api' },
+    { x: 278, y: 230, anchor: 'middle', text: '결과 전송' },
+    { x: 468, y: 294, anchor: 'middle', text: 'Flask 개발 서버로 실행' },
+    { x: 24, y: 310, text: '데이터 준비', bold: true },
+    { x: 540, y: 340, anchor: 'middle', text: 'MBTI 설명 CSV' },
+  ],
+};

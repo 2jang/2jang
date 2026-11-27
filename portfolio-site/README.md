@@ -19,7 +19,7 @@ npm run dev
 | 위치 | 내용 |
 | --- | --- |
 | `src/pages/index.astro` | 메인 페이지 (첫 화면, 소개와 수상, 기술 스택, 대표 프로젝트, 그 밖의 프로젝트) |
-| `src/pages/projects/*.mdx` | 프로젝트 상세 페이지 8개. 본문은 Markdown 으로 씁니다. |
+| `src/pages/projects/*.mdx` | 프로젝트 상세 페이지 9개. 본문은 Markdown 으로 씁니다. |
 | `src/pages/404.astro` | 없는 주소로 들어왔을 때 보여 주는 페이지. 3초 뒤 메인 페이지로 옮깁니다. |
 | `src/data/projects.ts` | 프로젝트 목록(제목, 분야, 한 줄 소개, 기간, 역할, 대표 기술, 링크, 표지)과 수상, 기술 스택, 머리글 이름, 메일 주소 |
 | `src/data/shots.ts` | 프로젝트별 화면 캡처 목록과 사진 설명 |

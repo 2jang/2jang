@@ -39,7 +39,7 @@ const tint = 'tint' in cover && cover.tint ? `--card-tint:${cover.tint}` : undef
 }
 {
   cover.kind === 'phones' && (
-    <div class="project-art art-circle" aria-hidden="true">
+    <div class:list={['project-art', 'art-circle', tint && 'art-tinted']} style={tint} aria-hidden="true">
       <div class="phone-frame circle-a">
         <img src={imageUrl(cover.left)} alt="" loading={loading} decoding={decoding} />
       </div>
