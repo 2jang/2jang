@@ -226,6 +226,25 @@ export const subProjects: Project[] = [
       tint: '#bdd0a6',
     },
   },
+  {
+    key: 'dbti',
+    title: 'DBTI',
+    domain: 'CHATBOT',
+    service: '반려견 성향 검사 카카오톡 챗봇',
+    summary:
+      '반려견 보호자를 위한 카카오톡 챗봇과 웹 성향 검사입니다. MBTI를 보내면 어울리는 견종을 추천하고, 웹에서 12문항에 답하면 반려견의 성격 유형과 양육 방법을 카드로 알려 줍니다.',
+    period: '2024.07 ~ 2024.08',
+    role: '팀장 · 백엔드',
+    tech: ['Flask', '카카오 i 오픈빌더', 'JavaScript'],
+    path: 'projects/dbti/',
+    repos: [{ label: 'GitHub', url: 'https://github.com/2jang/DBTI' }],
+    cover: {
+      kind: 'browser-phone',
+      browser: 'dbti/pc/03-web-start.webp',
+      phone: 'dbti/mobile/07-web-result.webp',
+      tint: '#bccbd3',
+    },
+  },
 ];
 
 export const allProjects: Project[] = [...mainProjects, ...subProjects];

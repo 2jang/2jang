@@ -55,6 +55,7 @@ const DF = 'DeepFake-Voice';
 const EG = 'easyGym';
 const TT = 'timetable-backend';
 const SW = 'sw-hackathon-react';
+const DB = 'DBTI';
 
 export const shotSets: Record<string, ShotSet> = {
   'hwaseong-dashboard': {
@@ -922,6 +923,90 @@ export const shotSets: Record<string, ShotSet> = {
             file: `${SW}/mobile/32-clickbattle-fever`,
             title: '피버 타임',
             desc: '피버 게이지가 찬 화면입니다.',
+          },
+        ],
+      },
+    ],
+  },
+
+  dbti: {
+    note: '챗봇 대화 화면(MBTI 견종 추천, 결과와 양육 방법)은 카카오톡 캡처가 아니라, 로컬에서 실행한 서버의 실제 응답을 그린 미리보기입니다. 실제 카카오톡 화면은 아래 프로젝트 소개 그림에 들어 있는 2024년 캡처 한 장입니다. 웹 검사 화면은 로컬에서 실행해 촬영했고, 화면 디자인의 원형은 팀원 작업입니다.',
+    extras: [{ file: `${DB}/pc/00-overview`, id: 'overview', device: 'pc' }],
+    tabs: [
+      {
+        label: 'PC',
+        device: 'pc',
+        shots: [
+          {
+            file: `${DB}/pc/02-chatbot-mbti-dog`,
+            title: 'MBTI 견종 추천',
+            desc: 'MBTI를 보내면 유형 설명과 어울리는 견종 카드로 답합니다. 왼쪽은 서버 응답을 그린 미리보기이고, 오른쪽은 실제 요청과 응답입니다.',
+          },
+          {
+            file: `${DB}/pc/03-web-start`,
+            title: '웹 검사 시작',
+            desc: '웹 검사의 첫 화면입니다. 시작하기를 누르면 1번 문항으로 넘어갑니다.',
+          },
+          {
+            file: `${DB}/pc/04-web-first-question`,
+            title: '1번 문항',
+            desc: '문항마다 두 보기 중 하나를 고릅니다.',
+          },
+          {
+            file: `${DB}/pc/05-web-progress`,
+            title: '검사 진행',
+            desc: '문항을 따라 내려갈수록 위쪽 그림의 사람과 강아지가 가까워집니다. 이 애니메이션은 팀원이 만들었습니다.',
+          },
+          {
+            file: `${DB}/pc/06-web-last-question`,
+            title: '마지막 문항',
+            desc: '마지막 12번 문항입니다. 답을 고른 뒤 결과 확인 버튼을 누릅니다.',
+          },
+          {
+            file: `${DB}/pc/07-web-result`,
+            title: '검사 결과',
+            desc: '반려견의 성격 유형 코드가 나옵니다. 같은 결과를 서버로 보냅니다.',
+          },
+          {
+            file: `${DB}/pc/08-chatbot-dbti-result`,
+            title: '결과와 양육 방법',
+            desc: '검사 뒤 챗봇에서 결과를 요청하면 유형 설명 카드와 양육 방법으로 답합니다. 왼쪽은 서버 응답을 그린 미리보기이고, 오른쪽은 실제 요청과 응답입니다.',
+          },
+          {
+            file: `${DB}/pc/09-dbti-types`,
+            title: 'DBTI 유형 데이터',
+            desc: '서버가 읽는 유형 데이터 16개의 코드와 이름입니다.',
+          },
+          {
+            file: `${DB}/pc/10-mbti-dog-list`,
+            title: 'MBTI별 추천 견종',
+            desc: 'MBTI 16유형마다 추천하는 견종 목록입니다.',
+          },
+        ],
+      },
+      {
+        label: '모바일',
+        device: 'mobile',
+        shots: [
+          {
+            file: `${DB}/mobile/03-web-start`,
+            title: '웹 검사 시작',
+            desc: '휴대폰 폭에서 본 검사 첫 화면입니다.',
+          },
+          {
+            file: `${DB}/mobile/05-web-progress`,
+            title: '검사 진행',
+            desc: '7번 문항 화면입니다. 문항이 진행된 만큼 사람과 강아지가 가까워져 있습니다.',
+          },
+          {
+            file: `${DB}/mobile/06-web-last-question`,
+            title: '마지막 문항',
+            desc: '12번 문항과 결과 확인 버튼입니다.',
+          },
+          {
+            file: `${DB}/mobile/07-web-result`,
+            title: '검사 결과',
+            desc: '휴대폰 폭에서 본 검사 결과 창입니다.',
           },
         ],
       },
