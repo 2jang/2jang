@@ -16,14 +16,14 @@ export interface DemoLink {
 /**
  * 카드 표지 그림. 사진 경로는 public/images 기준이다.
  * - browsers: 기울인 브라우저 창 두 장. tint 를 주면 그 바탕색을 쓴다.
- * - phones: 휴대폰 두 대
+ * - phones: 휴대폰 두 대. tint 를 주면 그 바탕색을 쓴다.
  * - window-phone: 창 한 장과 휴대폰 한 대
  * - browser-phone: 바탕색 위에 브라우저 창 한 장과 휴대폰 한 대
  * - browser: 바탕색 위에 브라우저 창 한 장(사진이 한 장뿐일 때)
  */
 export type Cover =
   | { kind: 'browsers'; back: string; front: string; tint?: string }
-  | { kind: 'phones'; left: string; right: string }
+  | { kind: 'phones'; left: string; right: string; tint?: string }
   | { kind: 'window-phone'; window: string; phone: string }
   | { kind: 'browser-phone'; browser: string; phone: string; tint: string }
   | { kind: 'browser'; image: string; tint: string };
@@ -239,9 +239,9 @@ export const subProjects: Project[] = [
     path: 'projects/dbti/',
     repos: [{ label: 'GitHub', url: 'https://github.com/2jang/DBTI' }],
     cover: {
-      kind: 'browser-phone',
-      browser: 'dbti/pc/03-web-start.webp',
-      phone: 'dbti/mobile/07-web-result.webp',
+      kind: 'phones',
+      left: 'dbti/mobile/03-web-start.webp',
+      right: 'dbti/mobile/07-web-result.webp',
       tint: '#bccbd3',
     },
   },

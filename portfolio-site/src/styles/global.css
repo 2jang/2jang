@@ -941,10 +941,18 @@ a.profile-link:hover {
 /* 바탕색(--card-tint)을 프로젝트마다 정하는 표지 */
 .art-standard,
 .art-duo,
-.art-pair {
+.art-pair,
+.art-circle.art-tinted {
   background:
     radial-gradient(ellipse at 26% 0%, #ffffff5c, transparent 62%),
     var(--card-tint, #9ca9a2);
+}
+
+/* 휴대폰 두 대 표지에 바탕색을 따로 준 경우 */
+.art-tinted .phone-frame {
+  box-shadow:
+    5px 10px 16px #1b252047,
+    1px 2px 3px #0006;
 }
 
 .art-standard .browser-frame {
