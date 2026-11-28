@@ -36,7 +36,7 @@ npm run dev
 | `src/components/Todo.astro` | 배포 전에 채워야 하는 값 표시 |
 | `src/layouts/` | 공통 레이아웃(`Base.astro`)과 프로젝트 상세 레이아웃(`Project.astro`) |
 | `src/styles/global.css` | 색상, 글꼴, 화면 폭별 배치, 인쇄용 스타일 |
-| `public/art/` | 첫 화면 그림처럼 디자인에 쓰는 그림. 사진 가져오기 스크립트가 건드리지 않습니다. |
+| `public/art/` | 첫 화면 사진(`profile.webp`)처럼 디자인에 쓰는 그림. 사진 가져오기 스크립트가 건드리지 않습니다. |
 | `scripts/import-images.mjs` | 원본 화면 캡처를 사이트용 WebP 로 바꿔 `public/images` 에 넣는 스크립트 |
 | `scripts/make-site-images.mjs` | 파비콘(`favicon.ico`)과 링크 미리보기 그림(`og-image.png`)을 만드는 스크립트 |
 
