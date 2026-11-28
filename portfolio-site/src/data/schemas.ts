@@ -70,6 +70,7 @@ export const washcallSchema: SchemaData = {
         { name: 'user_token' },
         { name: 'fcm_token' },
       ],
+      main: true,
     },
     {
       id: 'reservation',
@@ -79,6 +80,7 @@ export const washcallSchema: SchemaData = {
       y: 20,
       w: 232,
       columns: [{ name: '(user_id, room_id)', key: 'UQ' }],
+      main: true,
     },
     {
       id: 'roomSub',
@@ -100,7 +102,7 @@ export const washcallSchema: SchemaData = {
       columns: [{ name: '(user_id, machine_uuid)', key: 'UQ' }],
       main: true,
     },
-    { id: 'room', name: 'room_table', note: '세탁실', x: 544, y: 60, w: 196 },
+    { id: 'room', name: 'room_table', note: '세탁실', x: 544, y: 60, w: 196, main: true },
     {
       id: 'machine',
       name: 'machine_table',
@@ -112,6 +114,7 @@ export const washcallSchema: SchemaData = {
         { name: 'machine_uuid', key: 'PK' },
         { name: 'machine_id', key: 'UQ' },
       ],
+      main: true,
     },
     { id: 'time', name: 'time_table', note: '코스별 평균 시간', x: 20, y: 362, w: 196 },
     {
@@ -126,7 +129,7 @@ export const washcallSchema: SchemaData = {
     { id: 'standard', name: 'standard_table', note: '기기별 진동 기준값 이력', x: 544, y: 362, w: 196 },
     { id: 'tip', name: 'ai_tip_cache', note: 'AI 추천 문구 캐시', x: 20, y: 488, w: 196, main: true },
     { id: 'weather', name: 'weather_cache', note: '기상청 예보 캐시', x: 264, y: 488, w: 232, main: true },
-    { id: 'raw', name: 'raw_sensor_data', note: '센서 원시 샘플', x: 544, y: 488, w: 196 },
+    { id: 'raw', name: 'raw_sensor_data', note: '센서 원시 샘플', x: 544, y: 488, w: 196, main: true },
   ],
   links: [
     { from: ['user', 'right'], to: ['reservation', 'left'], ends: ['1', 'N'] },
@@ -227,7 +230,7 @@ export const timetableSchema: SchemaData = {
       ],
       main: true,
     },
-    { id: 'building', name: 'Building', note: '건물', x: 234, y: 300, w: 172 },
+    { id: 'building', name: 'Building', note: '건물', x: 234, y: 300, w: 172, main: true },
     { id: 'room', name: 'Room', note: '강의실', x: 434, y: 300, w: 172 },
   ],
   links: [
