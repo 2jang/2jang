@@ -23,7 +23,7 @@ stack:
 
 import Diagram from '../../components/Diagram.astro';
 import Todo from '../../components/Todo.astro';
-import { privacyLensArch } from '../../data/diagrams';
+import { privacyLensArch, privacyLensEngine } from '../../data/diagrams';
 
 ## 프로젝트 소개
 
@@ -68,6 +68,15 @@ import { privacyLensArch } from '../../data/diagrams';
 <Diagram {...privacyLensArch} caption="연두색으로 표시한 게이트웨이가 직접 설계하고 개발한 부분입니다." />
 
 엔진 하나가 CPU를 대부분 사용하기 때문에, 한 서버 안에서 작업자를 늘리는 대신 엔진을 서버 단위로 확장하는 구조를 선택했습니다.
+
+### 분석 엔진의 처리 순서
+
+<Diagram
+  {...privacyLensEngine}
+  caption="연두색은 팀 저장소에서 직접 설계하고 개발한 부분입니다. 차례 대기, 규칙 판정, 가림은 제가 별도 저장소에서 만든 초기 버전을 가져왔고, 규칙 일부는 팀원이 추가했습니다. 객체 검출 모델은 팀원이 학습했습니다."
+/>
+
+엔진 하나는 한 번에 한 건만 처리합니다. 사진 한 장을 OCR, 객체 검출, 판정 순서로 처리하고, 단계가 시작될 때마다 남은 시간을 다시 계산해 SSE로 보냅니다.
 
 ## 사례 1 · PaddleOCR 엔진의 동시 요청 오류
 
