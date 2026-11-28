@@ -27,19 +27,18 @@ const pad = (count: number) => String(count).padStart(2, '0');
           <a class="button secondary" href="#about"><Icon name="user" size={17} />개발자 소개</a>
         </div>
       </div>
-      <div class="system-art" aria-hidden="true">
-        <div class="drawing-field"></div>
-        <img
-          class="server-art"
-          src={imageUrl('/art/server-stack.webp')}
-          width="1100"
-          height="820"
-          alt=""
-          fetchpriority="high"
-        />
-        <div class="drawing-label label-top"><span class="leader"></span>COMPUTE</div>
-        <div class="drawing-label label-bottom">STORAGE<span class="leader"></span></div>
-        <div class="drawing-caption"><span class="axis-symbol">⌖</span> SYSTEM ARCHITECTURE</div>
+      <div class="system-art">
+        <div class="drawing-field" aria-hidden="true"></div>
+        <div class="portrait">
+          <img
+            class="portrait-photo"
+            src={imageUrl('/art/profile.webp')}
+            width="720"
+            height="900"
+            alt={`${profile.name} 사진`}
+            fetchpriority="high"
+          />
+        </div>
       </div>
     </div>
   </section>
